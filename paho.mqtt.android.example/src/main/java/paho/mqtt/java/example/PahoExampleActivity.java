@@ -23,6 +23,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.ToggleButton;
+
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.DisconnectedBufferOptions;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -38,7 +41,6 @@ import java.util.ArrayList;
 
 public class PahoExampleActivity extends AppCompatActivity{
     private RecyclerView mRecyclerView;
-    private HistoryAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
 
@@ -55,11 +57,9 @@ public class PahoExampleActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        ToggleButton button = (ToggleButton)findViewById(R.id.toggleButton);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 publishMessage("S2/w1",""+w1);
@@ -67,14 +67,6 @@ public class PahoExampleActivity extends AppCompatActivity{
         });
 
 
-
-
-        mRecyclerView = (RecyclerView) findViewById(R.id.history_recycler_view);
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        mAdapter = new HistoryAdapter(new ArrayList<String>());
-        mRecyclerView.setAdapter(mAdapter);
 
 
         mqttAndroidClient = new MqttAndroidClient(getApplicationContext(), serverUri, clientId);
@@ -149,20 +141,27 @@ public class PahoExampleActivity extends AppCompatActivity{
     private void dosalemWiadomosc(String topic,String message){
         switch (topic){
             case "S1/dane0" :
-                addToHistory("Temp 1: " + message);
+                TextView temp1 = (TextView) findViewById(R.id.textView2);
+                temp1.setText("Temp 1: " + message);
                 break;
             case "S1/dane1" :
-                addToHistory("Temp2 : "+message);
+                TextView temp2 = (TextView) findViewById(R.id.textView3);
+                temp2.setText("Temp 2: " + message);
                 break;
             case "S2/w1" :
-                addToHistory("w1 : " +message );
+                ToggleButton toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
+                if(message=="1"){
+                    toggleButton.setChecked(true);
+                }else{
+                    toggleButton.setChecked(false);
+                }
                 w1 = w1==1?0:1;
                 break;
         }
     }
     private void addToHistory(String mainText){
         System.out.println("LOG: " + mainText);
-        mAdapter.add(mainText);
+       // mAdapter.add(mainText);
         Snackbar.make(findViewById(android.R.id.content), mainText, Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
 

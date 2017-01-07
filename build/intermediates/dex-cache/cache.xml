@@ -3,30 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\exploded-aar\org.eclipse.paho\org.eclipse.paho.android.service\1.1.0\jars\libs\org.eclipse.paho.client.mqttv3-1.1.0.jar"
+        jar="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="747dd7ad3c1c6cf472fa2b79c47d648855898dd5">
-        <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\8\org.eclipse.paho.client.mqttv3-1.1.0_602cc787e7b7ced4663e8748776c5b9a90973030\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="ce0222b1c3d5222c8942f1b671c0d936c3c95261">
-        <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_881947b3c75d28ef4b4cec6932bcba6fdcac0a2a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\DOM\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
-        <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.3.0_2139dd56281d5c0f6e634e565c0d8e1143adc82a\classes.dex" />
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.3.0_d48670d457bbf3ca56891b44a7e024256c84c78a\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -36,6 +18,60 @@
         revision="23.0.2"
         sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
         <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_2367465860fa7b70a4205ea813f8502b2a2d8482\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.3.0_ae0f4a93b870b51d1c5430112cc21557648cfe32\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="5306a85683177a4d9b14f28ae566353a6b062d8d">
+        <dex dex="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_0fe9dd9f49b9fc970860e8cc12f96b7d217a57a0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="6e5e9e27aef9149f58bf7c335cc679e5950cf60b">
+        <dex dex="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_31e5ca673a2583c58f8eb97b810b5a71556fe40e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_7c92afddcbcb338de3e97671fb51e1cbf29045b7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.3.0_1334f8a6017afa2a829c3d9049e126300357afba\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_dd7f060e567089c9ea70ceb539cac10c73c44903\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -57,21 +93,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jar="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
-        <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.3.0_00cd1b6974e2898979787df061df76fc6b2df3d9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
-        <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_2574d280c896eae92d59b09cc5345bb3190b6f69\classes.dex" />
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.3.0_d790b5d80c93aaa6fc352d2bc2b99ed6c60fe88d\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -84,6 +111,24 @@
     </item>
     <item
         is-multidex="true"
+        jar="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.3.0_d80fd3aaba69368c570842c6f06b7ab26dc91b75\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.3.0_36f42a34517166f6a6c29fbbc80e7c6f97442525\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -93,12 +138,138 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jar="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\exploded-aar\org.eclipse.paho\org.eclipse.paho.android.service\1.1.0\jars\libs\org.eclipse.paho.client.mqttv3-1.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="747dd7ad3c1c6cf472fa2b79c47d648855898dd5">
+        <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\8\org.eclipse.paho.client.mqttv3-1.1.0_602cc787e7b7ced4663e8748776c5b9a90973030\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.3.0_60b8b1c438c489a44eb6b89d0f3d30375974c652\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="ce0222b1c3d5222c8942f1b671c0d936c3c95261">
+        <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_881947b3c75d28ef4b4cec6932bcba6fdcac0a2a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\DOM\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.3.0_2139dd56281d5c0f6e634e565c0d8e1143adc82a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\exploded-aar\org.eclipse.paho\org.eclipse.paho.android.service\1.1.0\jars\libs\org.eclipse.paho.client.mqttv3-1.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="747dd7ad3c1c6cf472fa2b79c47d648855898dd5">
+        <dex dex="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\8\org.eclipse.paho.client.mqttv3-1.1.0_0fec56b528bde9476a375fab9ddf885fd2f2f5a5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.3.0_00cd1b6974e2898979787df061df76fc6b2df3d9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\exploded-aar\org.eclipse.paho\org.eclipse.paho.android.service\1.1.0\jars\libs\org.eclipse.paho.client.mqttv3-1.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="747dd7ad3c1c6cf472fa2b79c47d648855898dd5">
+        <dex dex="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\transforms\dex\debug\folders\1000\8\org.eclipse.paho.client.mqttv3-1.1.0_89d9be084ef6a3f519ce1cf65a1d05bd46aa919b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.3.0_f9d00f1cd5bd1dcc3a0222458b4f498a817c92cc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.3.0_0335ffa1ff757eb5e0387d5bc7ae82f01546327e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_430a0e59f958dd801a839cf26a9d44c69db54508\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_7d6b747b781db06fb5bb5858b7ace89628e84a9a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_2574d280c896eae92d59b09cc5345bb3190b6f69\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
-        <dex dex="D:\Android\paho.mqtt.android-master\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.3.0_1334f8a6017afa2a829c3d9049e126300357afba\classes.dex" />
+        <dex dex="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.3.0_a164524fad6a52ae7ff6b3ed1802b91e512669ed\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8b984a5fae3e6c4f4abc39d82596af4efcf42a18">
+        <dex dex="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_6fc85cedbfe5933573217bc5801ddb1f166ed8ae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="0e2650acceea68a3075ae0d3dd9f29864676db53">
+        <dex dex="D:\Android\ESPAndroid\org.eclipse.paho.android.sample\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_9d14b5a9fa14959ec4e729e7ea2c8d52447e9507\classes.dex" />
     </item>
 
 </items>
