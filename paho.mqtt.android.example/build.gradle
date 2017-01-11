@@ -41,6 +41,7 @@ dependencies {
         //exclude module: "org.eclipse.paho.client.mqttv3"
         transitive=true
     }
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
 }
 
 configurations.compile.exclude module: 'org.eclipse.paho.client.mqttv3'
