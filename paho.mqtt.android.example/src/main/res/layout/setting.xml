@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="#000000">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:background="#2d2c2c"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@+id/frameLayout"
+        android:layout_alignStart="@+id/frameLayout">
+
+        <TextView
+            android:text="Home system"
+            android:layout_width="100dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/textView1"
+            android:textColor="#fbfdfb"
+            android:textSize="12sp"
+            android:layout_marginEnd="10dp"
+            android:textStyle="normal|bold"
+            android:textAlignment="center" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="290dp"
+            android:layout_marginTop="2dp"
+            app:srcCompat="@android:drawable/ic_menu_save"
+            android:id="@+id/imageButton1"
+            android:background="@android:drawable/ic_menu_save" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="2dp"
+            app:srcCompat="@android:drawable/ic_menu_revert"
+            android:id="@+id/imageButton2"
+            android:background="@android:drawable/ic_menu_revert" />
+
+
+
+    </FrameLayout>
+
+
+    <TextView
+        android:text="Adres serwera  Mqtt  (Local)"
+        android:layout_height="20dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="50dp"
+        android:id="@+id/textView16"
+        android:textColor="#eddf12"
+        android:background="#000000"
+        android:textSize="14sp"
+
+        android:layout_width="250dp" />
+
+
+    <TextView
+        android:text="Adres serwera  Mqtt  (Internet)"
+        android:layout_height="20dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="130dp"
+        android:id="@+id/textView2"
+        android:textColor="#eddf12"
+        android:textSize="14sp"
+        android:layout_width="250dp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="20"
+        android:textColor="#FFFFFF"
+        android:background="#2d2c2c"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="90dp"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp"
+        android:id="@+id/editText1"
+        android:textSize="18sp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="20"
+        android:textColor="#FFFFFF"
+        android:background="#2d2c2c"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="170dp"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp"
+        android:id="@+id/editText2"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="Port"
+        android:layout_height="20dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="210dp"
+        android:id="@+id/textView3"
+        android:textColor="#eddf12"
+        android:textSize="14sp"
+        android:layout_width="250dp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:inputType="number"
+        android:text=""
+        android:ems="20"
+        android:textColor="#FFFFFF"
+        android:background="#2d2c2c"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="250dp"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp"
+        android:id="@+id/editText3"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="Nazwa urzytkownika"
+        android:layout_height="20dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="290dp"
+        android:id="@+id/textView4"
+        android:textColor="#eddf12"
+        android:textSize="14sp"
+        android:layout_width="250dp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="20"
+        android:textColor="#FFFFFF"
+        android:background="#2d2c2c"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="330dp"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp"
+        android:id="@+id/editText4"
+        android:textSize="18sp" />
+
+    <TextView
+    android:text="Login"
+    android:layout_height="20dp"
+    android:layout_marginStart="70dp"
+    android:layout_marginTop="370dp"
+    android:id="@+id/textView5"
+    android:textColor="#eddf12"
+    android:textSize="14sp"
+    android:layout_width="250dp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="20"
+        android:textColor="#FFFFFF"
+        android:background="#2d2c2c"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="410dp"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp"
+        android:id="@+id/editText5"
+        android:textSize="18sp" />
+
+    <TextView
+        android:text="Hasło"
+        android:layout_height="20dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="450dp"
+        android:id="@+id/textView6"
+        android:textColor="#eddf12"
+        android:textSize="14sp"
+        android:layout_width="250dp" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="20"
+        android:textColor="#FFFFFF"
+        android:background="#2d2c2c"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="490dp"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp"
+        android:id="@+id/editText6"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>

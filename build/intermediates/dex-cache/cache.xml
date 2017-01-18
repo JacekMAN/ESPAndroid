@@ -52,7 +52,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="43c317c39fb3dbde80acb84999abb757a46742c6">
+        sha1="07e17eb6ccfa2bdb2de29ffa82c22e6aad785869">
         <dex dex="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_0fe9dd9f49b9fc970860e8cc12f96b7d217a57a0\classes.dex" />
     </item>
     <item
@@ -61,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="d805ad23e7a38c1079e3aa6df666cc7c1f8a362c">
+        sha1="b9c8134b34e4ba5618bab02f2bbe87fb17a5b732">
         <dex dex="D:\Android\ESPAndroid\paho.mqtt.android.example\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_31e5ca673a2583c58f8eb97b810b5a71556fe40e\classes.dex" />
     </item>
     <item

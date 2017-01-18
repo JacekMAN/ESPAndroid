@@ -13,9 +13,18 @@
  */
 package paho.mqtt.java.example;
 
+import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.net.Uri;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.ColorRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +34,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -54,14 +64,26 @@ public class PahoExampleActivity extends AppCompatActivity {
 
     MqttAndroidClient mqttAndroidClient;
 
-    final String serverUri = "tcp://jacman.ddns.info:1883";
 
-    final String clientId = "Android7";
+
+
+    String clientId = "";
     final String subscriptionTopic = "#";
 
     int w1 = 0;
     int wynik ; // obliczenie procentowe wody
+    int Swynik ; // obliczenie procentowe wody solary
     ProgressBar woda;
+    SharedPreferences Baza;
+    SharedPreferences.Editor EBaza;
+
+
+
+    String serverUri = "";
+
+    // Intent i= new Intent(PahoExampleActivity.this ,setting.class);
+
+
 
 
     /**
@@ -72,18 +94,69 @@ public class PahoExampleActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
 
+        Baza = getSharedPreferences("jacek",Context.MODE_PRIVATE);
+        EBaza=Baza.edit();
+        //EBaza.putString("local","Ala");
+        //EBaza.commit();
+        clientId = Baza.getString("nazwa","");
+        serverUri ="tcp://" +  Baza.getString("internet","")+":"+Baza.getString("port","");
         woda=(ProgressBar)findViewById(R.id.progressBar1);
 
-     //   ToggleButton button = (ToggleButton) findViewById(R.id.toggleButton);
-    //    button.setOnClickListener(new View.OnClickListener() {
-     //       @Override
-     //       public void onClick(View view) {
-     //           publishMessage("S2/w1", "" + w1);
-     //       }
-     //   });
+
+
+
+        ImageButton button3 = (ImageButton) findViewById(R.id.imageButton4);
+        button3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+               // publishMessage("S2/w1",""+w1);
+                publishMessage("S2/w1","1");
+            }
+
+        });
+
+
+
+       ImageButton button = (ImageButton) findViewById(R.id.imageButton2);
+       button.setOnClickListener(new View.OnClickListener() {
+
+           @Override
+           public void onClick(View view) {
+
+
+               Intent i= new Intent(PahoExampleActivity.this ,setting.class);
+                    startActivity(i);
+           }
+
+        });
+
+        TextView button2 = (TextView) findViewById(R.id.textView25);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+
+
+            public void onClick(View view) {
+                if (sprawdzCzyWifi() == false) {
+                    ImageButton pol2 = (ImageButton) findViewById(R.id.imageButton1);
+                    pol2.setColorFilter(Color.RED);
+                    addToHistory("Jesteś poza zasięgiem - włącz WIFI");
+                } else {
+                    Intent i = new Intent(PahoExampleActivity.this, sterowanie.class);
+                    startActivity(i);
+                }
+            }
+        });
+
+
+
+
 
 
         mqttAndroidClient = new MqttAndroidClient(getApplicationContext(), serverUri, clientId);
@@ -92,17 +165,19 @@ public class PahoExampleActivity extends AppCompatActivity {
             public void connectComplete(boolean reconnect, String serverURI) {
 
                 if (reconnect) {
-                    addToHistory("Reconnected to : " + serverURI);
+                    addToHistory("Ponowne łączenie : " + serverURI);
                     // Because Clean Session is true, we need to re-subscribe
                     subscribeToTopic();
                 } else {
-                    addToHistory("Connected to: " + serverURI);
+                    addToHistory("Połączony : " + serverURI);
                 }
             }
 
             @Override
             public void connectionLost(Throwable cause) {
-                addToHistory("The Connection was lost.");
+                addToHistory("Utracono połączenie.");
+                ImageButton pol = (ImageButton) findViewById(R.id.imageButton);
+                pol.setColorFilter(Color.RED);
             }
 
             @Override
@@ -119,8 +194,10 @@ public class PahoExampleActivity extends AppCompatActivity {
         MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
         mqttConnectOptions.setAutomaticReconnect(true);
         mqttConnectOptions.setCleanSession(false);
-        mqttConnectOptions.setUserName("Jacek");
-        mqttConnectOptions.setPassword("24734396567".toCharArray());
+        String sprawdz = Baza.getString("login","reyruyeru");
+        if (sprawdz == "") sprawdz="11";
+        mqttConnectOptions.setUserName(sprawdz);
+        mqttConnectOptions.setPassword(Baza.getString("haslo","eerteerer").toCharArray());
 
 
         try {
@@ -140,6 +217,8 @@ public class PahoExampleActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
                     addToHistory("Failed to connect to: " + serverUri);
+                    ImageButton pol = (ImageButton) findViewById(R.id.imageButton);
+                    pol.setColorFilter(Color.RED);
                 }
             });
 
@@ -155,17 +234,33 @@ public class PahoExampleActivity extends AppCompatActivity {
 
 
     //Wyswietlanie wiadomosci
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void dosalemWiadomosc(String topic, String message) {
+
+        if (sprawdzCzyWifi() == false) {
+            ImageButton pol2 = (ImageButton) findViewById(R.id.imageButton1);
+            pol2.setColorFilter(Color.RED);
+        }
+        else {
+            ImageButton pol2 = (ImageButton) findViewById(R.id.imageButton1);
+            pol2.setColorFilter(Color.GREEN);
+        }
+        ImageButton pol = (ImageButton) findViewById(R.id.imageButton);
+        pol.setColorFilter(Color.GREEN);
+
+
+
         switch (topic) {
+
             case "S1/dane5":
                 TextView temp5 = (TextView) findViewById(R.id.textView2);
                 temp5.setText(message + "`C");
                 double zmienna5 = new Double(message);
                 temp5.setTextColor(Color.rgb(50,100,200));
-                if (zmienna5 >= 1) {
+                if (zmienna5 > 0) {
                     temp5.setTextColor(Color.YELLOW);
                 }
-                if (zmienna5 >= 10) {
+                if (zmienna5 >= 15) {
                     temp5.setTextColor(Color.GREEN);
                 }
 
@@ -189,6 +284,7 @@ public class PahoExampleActivity extends AppCompatActivity {
                 TextView temp8 = (TextView) findViewById(R.id.textView6);
 
                 temp8.setText(message + "`C");
+
                 double zmienna8 = new Double(message);
                 temp8.setTextColor(Color.RED);
                 if (zmienna8 >= 15) {
@@ -212,7 +308,7 @@ public class PahoExampleActivity extends AppCompatActivity {
                     temp0.setTextColor(Color.RED);
                 }
 
-
+                addToHistory("pobrano dane");
                 break;
 
             case "S1/dane1":                                                 // woda czujnik 1
@@ -225,7 +321,7 @@ public class PahoExampleActivity extends AppCompatActivity {
                     temp1.setTextColor(Color.GREEN);
                 }
                 zmienna11 = zmienna11 - 35;
-                zmienna11 = zmienna11 * 4;
+                zmienna11 = zmienna11 * 3.5;
                 if (zmienna11 >= 100) zmienna11=100;
                 if(zmienna11 <= 0 ) zmienna11=0;
 
@@ -239,15 +335,21 @@ public class PahoExampleActivity extends AppCompatActivity {
                 TextView temp2 = (TextView) findViewById(R.id.textView14);
                 double zmienna12 = new Double(message);
                 zmienna12 = zmienna12 - 35;
-                zmienna12 = zmienna12 * 4;
+                zmienna12 = zmienna12 * 3.5;
                 if (zmienna12 >= 100) zmienna12=100;
                 if(zmienna12 <= 0 ) zmienna12=0;
 
                 int wynik2 = (int)zmienna12;
                 wynik= wynik+wynik2;
                 wynik=wynik/2;
-                
+
+                woda = (ProgressBar) findViewById(R.id.progressBar1);
                 woda.setProgress(wynik);
+                if(wynik>50){
+                    woda.setProgressTintList(ColorStateList.valueOf(Color.GREEN));
+                }else{
+                    woda.setProgressTintList(ColorStateList.valueOf(Color.YELLOW));
+                }
                 String procent = Integer.toString(wynik);
                 TextView temp22 = (TextView) findViewById(R.id.textView15);
                 temp22.setText(procent+"%");
@@ -255,9 +357,51 @@ public class PahoExampleActivity extends AppCompatActivity {
 
                 break;
 
+            case "S1/dane3":                                                 // woda czujnik 3
+                TextView temp3 = (TextView) findViewById(R.id.textView18);
+                temp3.setText(message + "`C");
+                double zmienna13 = new Double(message);
+
+                temp3.setTextColor(Color.YELLOW);
+                if (zmienna13 >= 45) {
+                    temp3.setTextColor(Color.GREEN);
+                }
+                zmienna13 = zmienna13 - 35;
+                zmienna13 = zmienna13 * 3.5;
+                if (zmienna13 >= 100) zmienna13=100;
+                if(zmienna13 <= 0 ) zmienna13=0;
 
 
-            // Obliczenie stanu wody
+                Swynik = (int)zmienna13;
+                break;
+
+            case "S1/dane4":                                                 // woda czujnik 2
+                TextView temp4 = (TextView) findViewById(R.id.textView14);
+                double zmienna14 = new Double(message);
+                zmienna14 = zmienna14 - 35;
+                zmienna14 = zmienna14 * 3.5;
+                if (zmienna14 >= 100) zmienna14=100;
+                if(zmienna14 <= 0 ) zmienna14=0;
+
+                int wynik22 = (int)zmienna14;
+                Swynik= Swynik+wynik22;
+                Swynik=Swynik/2;
+                woda = (ProgressBar) findViewById(R.id.progressBar);
+                woda.setProgress(Swynik);
+                String procent2 = Integer.toString(Swynik);
+                TextView temp42 = (TextView) findViewById(R.id.textView19);
+                temp42.setText(procent2+"%");
+
+
+                break;
+
+
+
+
+
+
+
+
 
 
 
@@ -282,15 +426,6 @@ public class PahoExampleActivity extends AppCompatActivity {
                 break;
 
 
-         //   case "S2/w1":
-         //       ToggleButton toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
-         //       if (message == "1") {
-         //           toggleButton.setChecked(true);
-         //       } else {
-         //           toggleButton.setChecked(false);
-         //       }
-         //       w1 = w1 == 1 ? 0 : 1;
-          //      break;
         }
     }
 
@@ -326,7 +461,9 @@ public class PahoExampleActivity extends AppCompatActivity {
             mqttAndroidClient.subscribe(subscriptionTopic, 1, null, new IMqttActionListener() {
                         @Override
                         public void onSuccess(IMqttToken asyncActionToken) {
-                            addToHistory("Połączono z serwerem");
+                           // addToHistory("Połączono z serwerem");
+                            ImageButton pol = (ImageButton) findViewById(R.id.imageButton);
+                            pol.setColorFilter(Color.GREEN);
                         }
 
                         @Override
@@ -409,5 +546,15 @@ public class PahoExampleActivity extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
+    }
+
+    private boolean sprawdzCzyWifi(){
+
+        WifiManager wifiManager = (WifiManager) getSystemService (Context.WIFI_SERVICE);
+        WifiInfo info = wifiManager.getConnectionInfo();
+        String ssid  = info.getSSID();
+
+        return ssid.contains("MAX");
+
     }
 }
