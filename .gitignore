@@ -38,6 +38,12 @@ $RECYCLE.BIN/
 .TemporaryItems
 .Trashes
 .VolumeIcon.icns
+.gradle/
+build/
+*/libraries/
+*/caches/
+*/lib/
+/gradle/
 
 # Directories potentially created on remote AFP share
 .AppleDB

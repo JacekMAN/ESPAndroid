@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+
+                tools:context=".PahoExampleActivity">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:background="#2d2c2c">
+
+
+                <TextView
+                    android:id="@+id/miastoy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Home System"
+                    android:textAlignment="center"
+                    android:textColor="#fbfdfb"
+                    android:textSize="12sp"
+                    android:textStyle="normal|bold"/>
+
+
+                <ImageButton
+                    android:id="@+id/pogoda1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@android:drawable/ic_menu_revert"
+                    app:srcCompat="@android:drawable/ic_menu_revert"/>
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Zużycie energii"
+                    android:textAlignment="center"
+                    android:textColor="#fddd08"
+                    android:textSize="12sp"
+                    android:textStyle="normal|bold"/>
+
+
+
+            </FrameLayout>
+
+
+            <TextView
+                android:text="-TEST-"
+                android:layout_height="19dp"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="12dp"
+                android:id="@+id/rybnik"
+                android:textSize="18sp"
+                android:layout_marginEnd="10dp"
+                android:textStyle="normal|bold"
+                android:textAlignment="center"
+                android:layout_width="wrap_content" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                android:background="#001000"
+                app:title="Demo1"
+                app:titleMarginStart="40dp"
+                android:theme="?attr/actionBarTheme"/>
+
+
+
+        </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/zuzycie_lista"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:headerDividersEnabled="false">
+
+    </ListView>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>

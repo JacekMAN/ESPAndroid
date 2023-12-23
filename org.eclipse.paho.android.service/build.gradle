@@ -3,11 +3,10 @@ apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 22
+        targetSdkVersion 29
         testApplicationId "org.eclipse.paho.android.service.test"
     }
     buildTypes {
@@ -24,6 +23,9 @@ android {
     lintOptions {
         abortOnError false
     }
+
+
+
 }
 
 repositories {
@@ -35,19 +37,21 @@ configurations {
 }
 
 dependencies {
-    compile "org.eclipse.paho:org.eclipse.paho.client.mqttv3:${rootProject.ext.clientVersion}"
-    compile "com.android.support:support-v4:${rootProject.ext.supportLibVersion}"
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    api "org.eclipse.paho:org.eclipse.paho.client.mqttv3:${rootProject.ext.clientVersion}"
+    api "com.android.support:support-v4:${rootProject.ext.supportLibVersion}"
+    api fileTree(include: ['*.jar'], dir: 'libs')
 }
 
 android.libraryVariants.all { variant ->
     task("generate${variant.name}Javadoc", type: Javadoc) {
+        doFirst {
+            ext.androidJar =
+                    "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
+            classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
+        }
         title = "$name $version API"
         description "Generates Javadoc for $variant.name."
-        source = variant.javaCompile.source
-        ext.androidJar =
-                "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
-        classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
+        source = variant.javaCompileProvider
         options.links("http://docs.oracle.com/javase/7/docs/api/");
         options.links("http://d.android.com/reference/");
         exclude '**/BuildConfig.java'
@@ -64,7 +68,7 @@ task("generateSourcesJar", type: Jar) {
 // Copy the Paho Java client into the libs directory to bundle it with the AAR
 task("copyLibs", type: Copy) {
     println "Copying MQTT Jar into libs directory"
-    from configurations.compile
+    from configurations.implementation
     into 'libs'
     include 'org.eclipse.paho*'
 }
@@ -117,7 +121,7 @@ publishing {
 }
 
 
-task debug << {
+task debug doLast {
     configurations.compile.each { println it}
 }
 // Required to bundle Java library Jar in AAR

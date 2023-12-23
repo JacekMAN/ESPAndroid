@@ -1,14 +1,12 @@
 package paho.mqtt.java.example;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 /**
  * Created by DOM on 11.01.2017.
@@ -16,7 +14,7 @@ import android.widget.TextView;
 
 
 
-public class setting extends Activity {
+public class Setting extends Activity {
 
 
     ProgressBar woda;
@@ -52,7 +50,7 @@ public class setting extends Activity {
 
 
 
-        ImageButton button = (ImageButton) findViewById(R.id.imageButton2);
+        ImageButton button = (ImageButton) findViewById(R.id.ustawienia);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

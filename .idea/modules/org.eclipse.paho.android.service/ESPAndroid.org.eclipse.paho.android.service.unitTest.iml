@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":org.eclipse.paho.android.service:unitTest" external.linked.project.path="$MODULE_DIR$/../../../org.eclipse.paho.android.service" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="android" name="Android">
+      <configuration>
+        <option name="SELECTED_BUILD_VARIANT" value="debug" />
+        <option name="ALLOW_USER_CONFIGURATION" value="false" />
+        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="" />
+        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
+        <option name="PROJECT_TYPE" value="1" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output-test url="file://$MODULE_DIR$/../../../org.eclipse.paho.android.service/build/intermediates/javac/debugUnitTest/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../org.eclipse.paho.android.service/build/generated/ap_generated_sources/debugUnitTest/out" />
+    <content url="file://$MODULE_DIR$/../../../org.eclipse.paho.android.service/src/test" />
+    <content url="file://$MODULE_DIR$/../../../org.eclipse.paho.android.service/src/testDebug" />
+    <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="ESPAndroid.org.eclipse.paho.android.service.main" scope="TEST" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.android.support:support-v4:23.3.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: D./Android/ESPAndroid/org.eclipse.paho.android.service/libs/org.eclipse.paho.client.mqttv3-1.1.0.jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.android.support:support-annotations:23.3.0" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="ESPAndroid.org.eclipse.paho.android.service.main" />
+</module>

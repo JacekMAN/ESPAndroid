@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+
+    tools:context=".PahoExampleActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="#2d2c2c"
+                android:layout_marginTop="10dp">
+
+
+                <TextView
+                    android:text="Home System"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/miasto"
+                    android:textColor="#fbfdfb"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="normal|bold"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content" />
+
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="2dp"
+                    app:srcCompat="@android:drawable/ic_menu_revert"
+                    android:id="@+id/pogoda1"
+                    android:background="@android:drawable/ic_menu_revert" />
+
+                <TextView
+                    android:text="Prognoza pogody"
+                    android:layout_height="19dp"
+                    android:textColor="#fddd08"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/text"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="normal|bold"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:layout_height="19dp"
+                    android:textColor="@android:color/holo_blue_bright"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/dzien1"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="normal|bold"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:text="                                   72 godziny" />
+
+            </FrameLayout>
+
+            <FrameLayout
+            android:id="@+id/rybnik2"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#2d2c2c"
+            android:layout_marginTop="10dp">
+
+
+            <TextView
+                android:text="RYBNIK"
+                android:layout_height="19dp"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="12dp"
+                android:id="@+id/rybnik"
+                android:textSize="18sp"
+                android:layout_marginEnd="10dp"
+                android:textStyle="normal|bold"
+                android:textAlignment="center"
+                android:layout_width="wrap_content" />
+
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/cieszyn2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#2d2c2c"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:text="CIESZYN"
+                    android:layout_height="19dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginTop="12dp"
+                    android:id="@+id/cieszyn"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="normal|bold"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content" />
+
+            </FrameLayout>
+
+            <FrameLayout
+            android:id="@+id/strzelce2"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#2d2c2c"
+            android:layout_marginTop="20dp">
+
+
+                <TextView
+                android:text="STRZELCE"
+                android:layout_height="19dp"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="12dp"
+                android:id="@+id/strzelce"
+                android:textSize="18sp"
+                android:layout_marginEnd="10dp"
+                android:textStyle="normal|bold"
+                android:textAlignment="center"
+                android:layout_width="wrap_content" />
+
+        </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/wroc2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#2d2c2c"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:text="WROCLAW"
+                    android:layout_height="19dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="12dp"
+                    android:id="@+id/wroc"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="normal|bold"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content" />
+
+            </FrameLayout>
+
+            <FrameLayout
+            android:id="@+id/lodz2"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#2d2c2c"
+            android:layout_marginTop="20dp">
+
+
+            <TextView
+                android:text="LÓDŹ"
+                android:layout_height="19dp"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="12dp"
+                android:id="@+id/lodz"
+                android:textSize="18sp"
+                android:layout_marginEnd="10dp"
+                android:textStyle="normal|bold"
+                android:textAlignment="center"
+                android:layout_width="wrap_content" />
+
+        </FrameLayout>
+            <FrameLayout
+                android:id="@+id/krak2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#2d2c2c"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:text="KRAKÓW"
+                    android:layout_height="19dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="12dp"
+                    android:id="@+id/krak"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="normal|bold"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/wisla2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#2d2c2c"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:text="WISLA"
+                    android:layout_height="19dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="12dp"
+                    android:id="@+id/wisla"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="normal|bold"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/zakopane2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="#2d2c2c"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:text="ZAKOPANE"
+                    android:layout_height="19dp"
+                    android:textColor="@color/common_google_signin_btn_text_dark_default"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="12dp"
+                    android:id="@+id/zakopane"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="10dp"
+                    android:textStyle="normal|bold"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content" />
+
+            </FrameLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_alignLeft="@+id/frameLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/frameLayout"
+        android:layout_marginTop="10dp"
+        android:background="#2d2c2c">
+
+        <TextView
+        android:id="@+id/lokal"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="9dp"
+        android:text="lokalne"
+        android:textColor="#fbfdfb"
+        android:textSize="12sp"
+        android:textStyle="normal|bold"/>
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="120dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="9dp"
+            android:text="Instalacja alarmowa"
+            android:textAlignment="viewStart"
+            android:textColor="#fbfdfb"
+            android:textSize="12sp"
+            android:textStyle="normal|bold"/>
+
+
+        <ImageButton
+            android:id="@+id/powr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="260dp"
+            android:layout_marginTop="2dp"
+            android:background="@android:drawable/ic_menu_revert"
+            app:srcCompat="@android:drawable/ic_menu_revert"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="60dp"
+        android:text="Alarm"
+        android:textColor="#fddd08"/>
+
+    <TextView
+        android:id="@+id/textView4a"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="60dp"
+        android:background="#2d2c2c"
+        android:text="pokój pywnica"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"/>
+
+    <TextView
+        android:id="@+id/textView4b"
+        android:layout_width="230dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="60dp"
+        android:background="#2d2c2c"
+        android:text="15:12 15-01-2012"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"/>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/wylaczalarm"
+        android:layout_height="45dp"
+        android:layout_alignLeft="@+id/frameLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/frameLayout"
+        android:layout_marginTop="90dp"
+        android:visibility="invisible"
+        android:background="#FF0AD50D">
+
+
+        <TextView
+            android:id="@+id/textView1a"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="4dp"
+            android:text="WYŁĄCZ ALARM"
+            android:textAlignment="viewStart"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="20sp"
+            android:textStyle="normal|bold"/>
+
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_alignLeft="@+id/frameLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/frameLayout"
+        android:layout_marginTop="145dp"
+        android:background="#2d2c2c">
+
+
+
+
+        <RadioButton
+            android:text="Cały dom zdalnie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/a1"
+            android:onClick="lacze2"
+            app:buttonTint="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:text="Piwnica + garaż"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/a2"
+            android:onClick="lacze2"
+            app:buttonTint="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="12sp" />
+
+
+        <RadioButton
+            android:text="Cały dom (telefon)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="60dp"
+            android:id="@+id/a3"
+            android:onClick="lacze2"
+            app:buttonTint="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:text="Piwnica + parter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="60dp"
+            android:id="@+id/a4"
+            android:onClick="lacze2"
+            app:buttonTint="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:text="Piętro (telefon)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="100dp"
+            android:id="@+id/a5"
+            android:onClick="lacze2"
+            app:buttonTint="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:text="Piętro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="100dp"
+            android:id="@+id/a6"
+            android:onClick="lacze2"
+            app:buttonTint="@color/common_google_signin_btn_text_dark_default"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="12sp" />
+
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/alarm1"
+        android:layout_width="match_parent"
+        android:layout_height="245dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="295dp"
+        android:background="#2d2c2c">
+
+
+
+        <TextView
+            android:id="@+id/alarmowy01"
+            android:layout_width="110dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="hol"
+            android:textColor="#fbfdfb"
+            android:textSize="15sp"
+            android:textStyle="normal|bold"/>
+
+
+        <ImageButton
+            android:id="@+id/imageAlarm1"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="7dp"
+            android:background="#2d2c2c"
+            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:visibility="visible"
+            app:srcCompat="@android:drawable/ic_notification_overlay"/>
+
+        <TextView
+            android:id="@+id/alarmowy01b"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="5dp"
+            android:background="#2d2c2c"
+            android:text=" "
+            android:textColor="@color/common_google_signin_btn_text_dark_default"/>
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/alarmowy02"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="35dp"
+            android:text="klatka schodowa"
+            android:textColor="#fbfdfb"
+            android:textSize="15sp"
+            android:textStyle="normal|bold"/>
+
+
+        <ImageButton
+            android:id="@+id/imageAlarm2"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="37dp"
+            android:background="#2d2c2c"
+            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:visibility="visible"
+            app:srcCompat="@android:drawable/ic_notification_overlay"/>
+
+        <TextView
+            android:id="@+id/alarmowy02b"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="35dp"
+            android:background="#2d2c2c"
+            android:text=" "
+            android:textColor="@color/common_google_signin_btn_text_dark_default"/>
+
+        <TextView
+            android:id="@+id/alarmowy03"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="65dp"
+            android:text="Piwnica duża"
+            android:textColor="#fbfdfb"
+            android:textSize="15sp"
+            android:textStyle="normal|bold"/>
+
+
+        <ImageButton
+            android:id="@+id/imageAlarm3"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="67dp"
+            android:background="#2d2c2c"
+            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:visibility="visible"
+            app:srcCompat="@android:drawable/ic_notification_overlay"/>
+
+        <TextView
+            android:id="@+id/alarmowy03b"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="65dp"
+            android:background="#2d2c2c"
+            android:text=" "
+            android:textColor="@color/common_google_signin_btn_text_dark_default"/>
+
+        <TextView
+            android:id="@+id/alarmowy04"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="95dp"
+            android:text="Piwnica hol"
+            android:textColor="#fbfdfb"
+            android:textSize="15sp"
+            android:textStyle="normal|bold"/>
+
+
+        <ImageButton
+            android:id="@+id/imageAlarm4"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="97dp"
+            android:background="#2d2c2c"
+            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:visibility="visible"
+            app:srcCompat="@android:drawable/ic_notification_overlay"/>
+
+        <TextView
+            android:id="@+id/alarmowy04b"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="95dp"
+            android:background="#2d2c2c"
+            android:text=" "
+            android:textColor="@color/common_google_signin_btn_text_dark_default"/>
+
+        <TextView
+            android:id="@+id/alarmowy05"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="125dp"
+            android:text="Piwnica pokój"
+            android:textColor="#fbfdfb"
+            android:textSize="15sp"
+            android:textStyle="normal|bold"/>
+
+
+        <ImageButton
+            android:id="@+id/imageAlarm5"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="127dp"
+            android:background="#2d2c2c"
+            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:visibility="visible"
+            app:srcCompat="@android:drawable/ic_notification_overlay"/>
+
+        <TextView
+            android:id="@+id/alarmowy05b"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="125dp"
+            android:background="#2d2c2c"
+            android:text=" "
+            android:textColor="@color/common_google_signin_btn_text_dark_default"/>
+
+        <TextView
+            android:id="@+id/alarmowy06"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="155dp"
+            android:text="Garaż"
+            android:textColor="#fbfdfb"
+            android:textSize="15sp"
+            android:textStyle="normal|bold"/>
+
+
+        <ImageButton
+            android:id="@+id/imageAlarm6"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="157dp"
+            android:background="#2d2c2c"
+            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:visibility="visible"
+            app:srcCompat="@android:drawable/ic_notification_overlay"/>
+
+        <TextView
+            android:id="@+id/alarmowy06b"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="155dp"
+            android:background="#2d2c2c"
+            android:text=" "
+            android:textColor="@color/common_google_signin_btn_text_dark_default"/>
+
+        <TextView
+            android:id="@+id/alarmowy07"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="185dp"
+            android:text="Parter"
+            android:textColor="#fbfdfb"
+            android:textSize="15sp"
+            android:textStyle="normal|bold"/>
+
+
+        <ImageButton
+            android:id="@+id/imageAlarm7"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="187dp"
+            android:background="#2d2c2c"
+            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:visibility="visible"
+            app:srcCompat="@android:drawable/ic_notification_overlay"/>
+
+        <TextView
+            android:id="@+id/alarmowy07b"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="185dp"
+            android:background="#2d2c2c"
+            android:text=" "
+            android:textColor="@color/common_google_signin_btn_text_dark_default"/>
+
+        <TextView
+            android:id="@+id/alarmowy08"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="215dp"
+            android:text="Piętro"
+            android:textColor="#fbfdfb"
+            android:textSize="15sp"
+            android:textStyle="normal|bold"/>
+
+
+        <ImageButton
+            android:id="@+id/imageAlarm8"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="217dp"
+            android:background="#2d2c2c"
+            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:visibility="visible"
+            app:srcCompat="@android:drawable/ic_notification_overlay"/>
+
+        <TextView
+            android:id="@+id/alarmowy08b"
+            android:layout_width="230dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="215dp"
+            android:background="#2d2c2c"
+            android:text=" "
+            android:textColor="@color/common_google_signin_btn_text_dark_default"/>
+
+
+
+    </FrameLayout>
+
+
+
+
+
+
+</RelativeLayout>
