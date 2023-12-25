@@ -18,7 +18,8 @@
         android:background="#2d2c2c"
         android:layout_marginTop="10dp"
         android:layout_alignLeft="@+id/frameLayout"
-        android:layout_alignStart="@+id/frameLayout">
+        android:layout_alignStart="@+id/frameLayout"
+        tools:ignore="UnknownIdInLayout">
 
         <TextView
             android:text="Home system"

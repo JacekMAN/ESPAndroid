@@ -388,7 +388,7 @@ public class PahoExampleActivity extends AppCompatActivity {
     //Wyswietlanie wiadomosci
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void dosalemWiadomosc(String topic, String message) {
-
+        pm10 = Baza.getString("pm10", "nie");
        wspolne();
         switch (topic) {
 
@@ -733,7 +733,7 @@ public class PahoExampleActivity extends AppCompatActivity {
                 promieniowanie = Baza.getString("promieniowanie", "nie");
                 pm10 = Baza.getString("pm10", "nie");
                 //if (pogoda .equals("tak")){
-                //    pobierzPOGODA();
+                 //   pobierzPOGODA();
                 //}
                 pobierzPOGODA();
                 awaryjne = 0;       //kasowanie wejscia awaryjnego
@@ -1196,7 +1196,7 @@ public class PahoExampleActivity extends AppCompatActivity {
         Thing object = new Thing.Builder()
                 .setName("PahoExample Page") // TODO: Define a title for the content shown.
                 // TODO: Make sure this auto-generated URL is correct.
-                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
+                .setUrl(Uri.parse("https://[ENTER-YOUR-URL-HERE]"))
                 .build();
         return new Action.Builder(Action.TYPE_VIEW)
                 .setObject(object)
@@ -1236,12 +1236,10 @@ public class PahoExampleActivity extends AppCompatActivity {
     }
 
     private void pobierzPOGODA() {
-        String url = "http://api.openweathermap.org/data/2.5/weather?q=Rybnik&units=metric&APPID=3f7686cca4450da8177abde18b20fb73";
+        String url = "https://api.openweathermap.org/data/2.5/weather?q=Rybnik&units=metric&APPID=3f7686cca4450da8177abde18b20fb73";
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
-
-
             public void onResponse(String response) {
                 JSONObject jsonObject = null;
                 try {
@@ -1269,7 +1267,7 @@ public class PahoExampleActivity extends AppCompatActivity {
                         TextView zachodView = (TextView) findViewById(R.id.zachod2);
                         zachodView.setText(zachod.toString() + " ");
 
-                        LoadImageFromUrl("http://openweathermap.org/img/w/" + obraz + ".png");
+                        LoadImageFromUrl("https://openweathermap.org/img/w/" + obraz + ".png");
 
                         TextView wiatrView = (TextView) findViewById(R.id.textView56);
                         DecimalFormat twoDForm2 = new DecimalFormat("####");
@@ -1318,7 +1316,7 @@ public class PahoExampleActivity extends AppCompatActivity {
 
     private void getPromieniowanie(final TextView textView) {
 
-        String url = "http://radioactiveathome.org/boinc/gettrickledata.php?start=0&hostid=15877";
+        String url = "https://radioactiveathome.org/boinc/gettrickledata.php?start=0&hostid=15877";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
@@ -1367,7 +1365,7 @@ public class PahoExampleActivity extends AppCompatActivity {
     private void getPM(String station, final String id, final TextView nazwaView, final TextView wartoscView,
                        final TextView przekroczenieView, final TextView sredniaView, final FrameLayout frameLayout) {
         station = station.isEmpty() ? "23" : station;
-        String url = "http://api.smoksmog.jkostrz.name/api/stations/" + station;
+        String url = "https://api.smoksmog.jkostrz.name/api/stations/" + station;
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -1437,7 +1435,7 @@ public class PahoExampleActivity extends AppCompatActivity {
     }
 
     public void Rybnik(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.meteo.pl/um/metco/mgram_pict.php?ntype=&row=465&col=207&lang=pl"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.meteo.pl/um/metco/mgram_pict.php?ntype=&row=465&col=207&lang=pl"));
         startActivity(intent);
     }
 

@@ -44,8 +44,8 @@ public class Ustawienia extends AppCompatActivity {
         Baza = getSharedPreferences("jacek", Context.MODE_PRIVATE);
         EBaza = Baza.edit();
 
-        //promieniowanie=Baza.getString("promieniowanie","nie");
-       // pm10=Baza.getString("pm10","nie")
+//        promieniowanie=Baza.getString("promieniowanie","nie");
+//        pm10=Baza.getString("pm10","nie");
 
 
         if (Baza.getString("Orient","1").equals("1")) {

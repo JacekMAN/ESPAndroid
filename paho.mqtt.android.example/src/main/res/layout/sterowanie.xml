@@ -68,7 +68,7 @@
             android:layout_marginStart="200dp"
             android:layout_marginTop="17dp"
             android:background="#2d2c2c"
-            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:tint="@color/common_google_signin_btn_text_dark_default"
             android:visibility="visible"
             app:srcCompat="@android:drawable/ic_notification_overlay" />
 
@@ -124,7 +124,7 @@
             android:layout_marginStart="100dp"
             android:layout_marginTop="17dp"
             android:background="#2d2c2c"
-            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:tint="@color/common_google_signin_btn_text_dark_default"
             android:visibility="visible"
             app:srcCompat="@android:drawable/ic_notification_overlay" />
 
@@ -178,7 +178,7 @@
             android:layout_marginStart="200dp"
             android:layout_marginTop="17dp"
             android:background="#2d2c2c"
-            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:tint="@color/common_google_signin_btn_text_dark_default"
             android:visibility="visible"
             app:srcCompat="@android:drawable/ic_notification_overlay" />
 
@@ -245,7 +245,7 @@
             android:layout_marginStart="200dp"
             android:layout_marginTop="17dp"
             android:background="#2d2c2c"
-            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:tint="@color/common_google_signin_btn_text_dark_default"
             android:visibility="visible"
             app:srcCompat="@android:drawable/ic_notification_overlay" />
 
@@ -299,7 +299,7 @@
             android:layout_marginStart="200dp"
             android:layout_marginTop="17dp"
             android:background="#2d2c2c"
-            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:tint="@color/common_google_signin_btn_text_dark_default"
             android:visibility="visible"
             app:srcCompat="@android:drawable/ic_notification_overlay" />
 
@@ -423,7 +423,7 @@
             android:layout_marginStart="200dp"
             android:layout_marginTop="17dp"
             android:background="#2d2c2c"
-            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:tint="@color/common_google_signin_btn_text_dark_default"
             android:visibility="visible"
             app:srcCompat="@android:drawable/ic_notification_overlay" />
 
@@ -478,7 +478,7 @@
             android:layout_marginStart="200dp"
             android:layout_marginTop="17dp"
             android:background="#2d2c2c"
-            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:tint="@color/common_google_signin_btn_text_dark_default"
             android:visibility="visible"
             app:srcCompat="@android:drawable/ic_notification_overlay" />
 
@@ -521,11 +521,11 @@
             android:id="@+id/imageButton331"
             style="@style/Widget.AppCompat.ImageButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="10dp"
             android:layout_marginStart="200dp"
             android:layout_marginTop="17dp"
             android:background="#2d2c2c"
-            android:tint="@color/common_google_signin_btn_text_dark_disabled"
+            android:tint="@color/common_google_signin_btn_text_dark_default"
             android:visibility="visible"
             app:srcCompat="@android:drawable/ic_notification_overlay" />
 

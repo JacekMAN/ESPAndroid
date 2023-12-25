@@ -211,6 +211,7 @@ public class Sterowanie extends AppCompatActivity {
                     public void run() {
                         if (!garazOtwarty1) {
                             button55.setColorFilter(Color.GRAY);
+
                         } else {
                             button55.setColorFilter(Color.RED);
                         }
