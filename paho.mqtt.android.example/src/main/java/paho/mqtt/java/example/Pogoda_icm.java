@@ -50,35 +50,35 @@ public class Pogoda_icm extends AppCompatActivity {
 
         if (Baza.getString("miasto","Rybnik").equals("Rybnik")) {
 
-            LoadImageFromUrl("http://www.meteo.pl/um/metco/mgram_pict.php?ntype=&row=465&col=207&lang=pl", (ImageView) findViewById(R.id.ICM));
+            LoadImageFromUrl("https://www.meteo.pl/um/metco/mgram_pict.php?ntype=&row=465&col=207&lang=pl", (ImageView) findViewById(R.id.ICM));
         }
         if (Baza.getString("miasto","Rybnik").equals("Cieszyn")) {
 
-            LoadImageFromUrl("http://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=475&col=208&lang=pl", (ImageView) findViewById(R.id.ICM));
+            LoadImageFromUrl("https://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=475&col=208&lang=pl", (ImageView) findViewById(R.id.ICM));
         }
         if (Baza.getString("miasto","Rybnik").equals("Strzelce_opolskie")) {
 
-            LoadImageFromUrl("http://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=453&col=203&lang=pl", (ImageView) findViewById(R.id.ICM));
+            LoadImageFromUrl("https://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=453&col=203&lang=pl", (ImageView) findViewById(R.id.ICM));
         }
         if (Baza.getString("miasto","Rybnik").equals("Wroclaw")) {
 
-            LoadImageFromUrl("http://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=436&col=181&lang=pl", (ImageView) findViewById(R.id.ICM));
+            LoadImageFromUrl("https://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=436&col=181&lang=pl", (ImageView) findViewById(R.id.ICM));
         }
         if (Baza.getString("miasto","Rybnik").equals("Łódź")) {
 
-            LoadImageFromUrl("http://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=418&col=223&lang=pl", (ImageView) findViewById(R.id.ICM));
+            LoadImageFromUrl("https://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=418&col=223&lang=pl", (ImageView) findViewById(R.id.ICM));
         }
         if (Baza.getString("miasto","Rybnik").equals("Kraków")) {
 
-            LoadImageFromUrl("http://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=466&col=232&lang=pl", (ImageView) findViewById(R.id.ICM));
+            LoadImageFromUrl("https://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=466&col=232&lang=pl", (ImageView) findViewById(R.id.ICM));
         }
         if (Baza.getString("miasto","Rybnik").equals("Wisła")) {
 
-            LoadImageFromUrl("http://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=477&col=213&lang=pl", (ImageView) findViewById(R.id.ICM));
+            LoadImageFromUrl("https://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=477&col=213&lang=pl", (ImageView) findViewById(R.id.ICM));
         }
         if (Baza.getString("miasto","Rybnik").equals("Zakopane")) {
 
-            LoadImageFromUrl("http://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=487&col=232&lang=pl", (ImageView) findViewById(R.id.ICM));
+            LoadImageFromUrl("https://www.meteo.pl/um/metco/mgram_pict.php?ntype=0u&row=487&col=232&lang=pl", (ImageView) findViewById(R.id.ICM));
         }
 
 

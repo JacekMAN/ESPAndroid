@@ -72,16 +72,16 @@
         app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
 
     <EditText
+        android:id="@+id/editText1"
+        android:layout_width="40dp"
         android:layout_height="20dp"
-        android:inputType="number"
-         android:text=""
-        android:ems="2"
-        android:textColor="#FFFFFF"
-        android:background="#2d2c2c"
         android:layout_marginStart="220dp"
         android:layout_marginTop="86dp"
-        android:id="@+id/editText1"
-        android:layout_width="40dp" />
+        android:background="#2d2c2c"
+        android:ems="2"
+        android:inputType="number"
+        android:text=""
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:text="`C"

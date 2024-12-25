@@ -13,103 +13,607 @@
 
                 tools:context=".PahoExampleActivity">
 
+    <RadioButton
+        android:text="Parter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:id="@+id/p1"
+        app:buttonTint="@color/common_google_signin_btn_text_dark_default"
+        android:onClick="selectpiec"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="14sp"
+        android:layout_alignBaseline="@+id/p2"
+        android:layout_alignBottom="@+id/p3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
-        <LinearLayout
+    <RadioButton
+        android:text="Pokój"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="80dp"
+        android:id="@+id/p2"
+        android:onClick="selectpiec"
+        app:buttonTint="@color/common_google_signin_btn_text_dark_default"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="14sp" />
+
+
+    <RadioButton
+        android:id="@+id/p3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="80dp"
+        android:onClick="selectpiec"
+        android:text="Piętro"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="14sp"
+        app:buttonTint="@color/common_google_signin_btn_text_dark_default" />
+
+
+
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:weightSum="1">
+            android:layout_height="43dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:background="#2d2c2c">
 
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_marginTop="10dp"
-                android:background="#2d2c2c">
-
-
-                <TextView
-                    android:id="@+id/miastoy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="19dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Home System"
-                    android:textAlignment="center"
-                    android:textColor="#fbfdfb"
-                    android:textSize="12sp"
-                    android:textStyle="normal|bold"/>
-
-
-                <ImageButton
-                    android:id="@+id/pogoda1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="260dp"
-                    android:layout_marginTop="2dp"
-                    android:background="@android:drawable/ic_menu_revert"
-                    app:srcCompat="@android:drawable/ic_menu_revert"/>
-
-                <TextView
-                    android:id="@+id/text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="19dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="110dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Zużycie energii"
-                    android:textAlignment="center"
-                    android:textColor="#fddd08"
-                    android:textSize="12sp"
-                    android:textStyle="normal|bold"/>
-
-
-
-            </FrameLayout>
-
+            <ImageButton
+                android:id="@+id/piecsiec"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="14dp"
+                android:background="#E91E63"
+                android:tint="@android:color/holo_red_dark"
+                android:visibility="visible"
+                app:srcCompat="@android:drawable/ic_notification_overlay" />
 
             <TextView
-                android:text="-TEST-"
+                android:id="@+id/textView1999"
+                android:layout_width="wrap_content"
                 android:layout_height="19dp"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
-                android:layout_marginStart="130dp"
-                android:layout_marginTop="12dp"
-                android:id="@+id/rybnik"
-                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginEnd="10dp"
-                android:textStyle="normal|bold"
-                android:textAlignment="center"
-                android:layout_width="wrap_content" />
+                android:text="Sterowanie"
+                android:textColor="#fbfdfb"
+                android:textSize="12sp"
+                android:textStyle="normal|bold" />
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView2999"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_marginStart="125dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="10dp"
+                android:text="lokalne"
+                android:textColor="#fbfdfb"
+                android:textSize="12sp"
+                android:textStyle="normal|bold" />
+
+            <ImageButton
+                android:id="@+id/pieccofnij"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minHeight="?attr/actionBarSize"
-                android:background="#001000"
-                app:title="Demo1"
-                app:titleMarginStart="40dp"
-                android:theme="?attr/actionBarTheme"/>
+                android:layout_marginStart="230dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:drawable/ic_menu_revert"
+                app:srcCompat="@android:drawable/ic_menu_revert" />
 
 
 
-        </LinearLayout>
 
+        </FrameLayout>
 
-    <ListView
-        android:id="@+id/zuzycie_lista"
+    <TextView
+        android:id="@+id/textpiec1"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="10dp"
+        android:text="Sterowanie ogrzewaniem"
+        android:textColor="#fbfdfb"
+        android:textSize="14sp"
+        android:textStyle="normal|bold" />
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="100dp"
-        android:headerDividersEnabled="false">
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="140dp"
+        android:background="#2d2c2c">
+        <CheckBox
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
 
-    </ListView>
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:id="@+id/czasowe0"
+            android:lineSpacingExtra="10sp"
+            app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
+        <TextView
+            android:id="@+id/textpiec2"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:text="Termostat"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp"
+            android:textStyle="normal|bold" />
 
-    <ListView
+    <TextView
+        android:id="@+id/piec13"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="7dp"
+        android:background="#000000"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/zadanaplus"
+            style="@android:style/Widget.ImageButton"
+
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="5dp"
+            android:tint="#000000"
+            app:srcCompat="@android:drawable/arrow_up_float" />
+        <ImageButton
+            android:id="@+id/zadanaminus"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="5dp"
+            android:tint="#000000"
+            app:srcCompat="@android:drawable/arrow_down_float" />
+    </FrameLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="200dp"
+        android:background="#2d2c2c">
+        <TextView
+            android:id="@+id/textpiec3"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:text="Czasowy 1"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/piec19"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="7dp"
+            android:background="#000000"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/zadanaplus2"
+            style="@android:style/Widget.ImageButton"
+
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="5dp"
+            android:tint="#000000"
+            app:srcCompat="@android:drawable/arrow_up_float" />
+        <ImageButton
+            android:id="@+id/zadanaminus2"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="5dp"
+            android:tint="#000000"
+            app:srcCompat="@android:drawable/arrow_down_float" />
+        <CheckBox
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:id="@+id/czasowe1"
+            android:lineSpacingExtra="10sp"
+            app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
+
+        <TextView
+            android:id="@+id/godzina1"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="50dp"
+            android:background="#9CA19D"
+            android:ems="2"
+            android:inputType="number"
+            android:maxLength="5"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+        <TextView
+            android:id="@+id/godzina1b"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="50dp"
+            android:background="#9CA19D"
+            android:textAlignment="center"
+            android:elegantTextHeight="false"
+            android:ems="2"
+            android:inputType="number"
+            android:maxLength="5"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="300dp"
+        android:background="#2d2c2c">
+        <TextView
+            android:id="@+id/textpiec4"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:text="Czasowy 2"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp"
+            android:textStyle="normal|bold" />
+        <TextView
+            android:id="@+id/piec24"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="7dp"
+            android:background="#000000"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/zadanaplus3"
+            style="@android:style/Widget.ImageButton"
+
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="5dp"
+            android:tint="#000000"
+            app:srcCompat="@android:drawable/arrow_up_float" />
+        <ImageButton
+            android:id="@+id/zadanaminus3"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="5dp"
+            android:tint="#000000"
+            app:srcCompat="@android:drawable/arrow_down_float" />
+        <CheckBox
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:id="@+id/czasowe2"
+            android:lineSpacingExtra="10sp"
+            app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
+
+        <TextView
+            android:id="@+id/godzina2"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="50dp"
+            android:background="#9CA19D"
+            android:ems="2"
+            android:inputType="number"
+            android:maxLength="5"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+        <TextView
+            android:id="@+id/godzina2b"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="50dp"
+            android:background="#9CA19D"
+            android:textAlignment="center"
+            android:elegantTextHeight="false"
+            android:ems="2"
+            android:inputType="number"
+            android:maxLength="5"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
+
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="400dp"
+        android:background="#2d2c2c">
+        <TextView
+            android:id="@+id/textpiec5"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:text="Czasowy 3"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/piec29"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="7dp"
+            android:background="#000000"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/zadanaplus4"
+            style="@android:style/Widget.ImageButton"
+
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="5dp"
+            android:tint="#000000"
+            app:srcCompat="@android:drawable/arrow_up_float" />
+        <ImageButton
+            android:id="@+id/zadanaminus4"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="5dp"
+            android:tint="#000000"
+            app:srcCompat="@android:drawable/arrow_down_float" />
+        <CheckBox
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:id="@+id/czasowe3"
+            android:lineSpacingExtra="10sp"
+            app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
+
+        <TextView
+            android:id="@+id/godzina3"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="50dp"
+            android:background="#9CA19D"
+            android:ems="2"
+            android:inputType="number"
+            android:maxLength="5"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+        <TextView
+            android:id="@+id/godzina3b"
+            android:layout_width="55dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="50dp"
+            android:background="#9CA19D"
+            android:textAlignment="center"
+            android:elegantTextHeight="false"
+            android:ems="2"
+            android:inputType="number"
+            android:maxLength="5"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="500dp"
+        android:background="#2d2c2c">
+        <CheckBox
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:id="@+id/czasowe5"
+            android:lineSpacingExtra="10sp"
+            app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
+        <TextView
+            android:id="@+id/textpiec7"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:text="Opużnienie czas."
+            android:textColor="#fbfdfb"
+            android:textSize="14sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/piec30"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="7dp"
+            android:background="#000000"
+            android:text="120min"
+            android:textAlignment="center"
+            android:textColor="#fddd08"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/zadanaplus5"
+            style="@android:style/Widget.ImageButton"
+
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="5dp"
+            android:tint="#000000"
+            app:srcCompat="@android:drawable/arrow_up_float" />
+        <ImageButton
+            android:id="@+id/zadanaminus5"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="5dp"
+            android:tint="#000000"
+            app:srcCompat="@android:drawable/arrow_down_float" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="560dp"
+        android:background="#2d2c2c">
+
+        <TextView
+            android:id="@+id/textgramica"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:text="Granica"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/piec31"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="7dp"
+            android:background="#000000"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/zadanaplus6"
+            style="@android:style/Widget.ImageButton"
+
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="5dp"
+            android:tint="#000000"
+            app:srcCompat="@android:drawable/arrow_up_float" />
+        <ImageButton
+            android:id="@+id/zadanaminus6"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="5dp"
+            android:tint="#000000"
+            app:srcCompat="@android:drawable/arrow_down_float" />
+    </FrameLayout>
+
+
 
 
 </RelativeLayout>

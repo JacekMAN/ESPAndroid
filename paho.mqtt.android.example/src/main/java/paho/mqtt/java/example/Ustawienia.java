@@ -30,7 +30,7 @@ public class Ustawienia extends AppCompatActivity {
         setContentView(R.layout.ustawienia);
 
         final CheckBox pogoda  = (CheckBox) findViewById(R.id.pogoda1);
-        final CheckBox promieniowanie  = (CheckBox) findViewById(R.id.promieniowanie1);
+        final CheckBox podlewaniwe  = (CheckBox) findViewById(R.id.podlewanie);
         final CheckBox pm  = (CheckBox) findViewById(R.id.PM101);
         final CheckBox ogrzewanie  = (CheckBox) findViewById(R.id.ogrzewanie);
         final RadioButton wybor1 = (RadioButton) findViewById(R.id.out1);
@@ -64,8 +64,8 @@ public class Ustawienia extends AppCompatActivity {
         if (Baza.getString("pogoda","nie").equals("tak")){
             pogoda.setChecked(true);
         }
-        if (Baza.getString("promieniowanie","nie").equals("tak")){
-            promieniowanie.setChecked(true);
+        if (Baza.getString("podlewanie","nie").equals("tak")){
+            podlewaniwe.setChecked(true);
         }
         if (Baza.getString("pm10","nie").equals("tak")){
             pm.setChecked(true);
@@ -130,16 +130,16 @@ public class Ustawienia extends AppCompatActivity {
 
     private void zapis() {
         final CheckBox pogoda  = (CheckBox) findViewById(R.id.pogoda1);
-        final CheckBox promieniowanie  = (CheckBox) findViewById(R.id.promieniowanie1);
+        final CheckBox podlewanie  = (CheckBox) findViewById(R.id.podlewanie);
         final CheckBox pm  = (CheckBox) findViewById(R.id.PM101);
         final CheckBox ogrzewanie  = (CheckBox) findViewById(R.id.ogrzewanie);
 
         if (pogoda.isChecked()==true){EBaza.putString("pogoda", "tak");}
         else
         {EBaza.putString("pogoda", "nie"); }
-        if (promieniowanie.isChecked()==true){EBaza.putString("promieniowanie", "tak");}
+        if (podlewanie.isChecked()==true){EBaza.putString("podlewanie", "tak");}
         else
-        {EBaza.putString("promieniowanie", "nie"); }
+        {EBaza.putString("podlewanie", "nie"); }
         if (pm.isChecked()==true){EBaza.putString("pm10", "tak");}
         else
         {EBaza.putString("pm10", "nie"); }

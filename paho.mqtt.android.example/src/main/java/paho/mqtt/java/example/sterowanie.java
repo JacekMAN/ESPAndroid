@@ -52,6 +52,7 @@ public class Sterowanie extends AppCompatActivity {
     final String subscriptionTopic = "#";
     int wiata = 10;
     int lampa = 10;
+    int podlewa = 10;
 
     int podswietlanie = 0;
     int w1 = 0;
@@ -194,6 +195,26 @@ public class Sterowanie extends AppCompatActivity {
             }
 
         });
+
+        ImageButton lampa102a = (ImageButton) findViewById(R.id.lampa102);
+        lampa102a.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+
+                if (podlewa == 0) {
+                    publishMessage("S9/w2", "0");
+                    addToHistory("Podlewanie - włączone");
+                } else {
+                    publishMessage("S9/w2", "1");
+                    addToHistory("Podlewanie - wyłączone");
+                }
+
+            }
+
+        });
+
 
 
         ImageButton gara1 = (ImageButton) findViewById(R.id.garaz11);
@@ -413,6 +434,22 @@ public class Sterowanie extends AppCompatActivity {
 
                 break;
 
+            case "S9/w22":
+
+                ImageButton podle = (ImageButton) findViewById(R.id.imageButton103);
+
+
+                double alan = new Double(message);
+                if (alan != 0) {podle.setColorFilter(Color.RED);podlewa =0;
+                    TextView pod2 = (TextView) findViewById (R.id.textView101);
+                    pod2.setText ("OFF"); }
+                if (alan != 0) {podle.setColorFilter(Color.RED);}
+                else {podle.setColorFilter(Color.GREEN);podlewa = 1;
+                    TextView pod2 = (TextView) findViewById (R.id.textView101);
+                    pod2.setText ("ON"); }
+
+                break;
+
             case "S3/dane0":                                                 // wiata czujnik 3
                 TextView wiataczas = (TextView) findViewById(R.id.textView7b);
                 double zmienna20 = new Double(message);
@@ -451,6 +488,8 @@ public class Sterowanie extends AppCompatActivity {
                 wjazd.setVisibility(View.VISIBLE);
                 FrameLayout wjazd2 = (FrameLayout) findViewById(R.id.wjazd2);
                 wjazd2.setVisibility(View.VISIBLE);
+                FrameLayout podlew = (FrameLayout) findViewById(R.id.podlewanie);
+                podlew.setVisibility(View.VISIBLE);
 
                 FrameLayout alarm = (FrameLayout) findViewById(R.id.alarm);
                 alarm.setVisibility(View.VISIBLE);

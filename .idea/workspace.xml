@@ -4,6 +4,18 @@
     <shared>
       <config />
     </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/alarm.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/sterowanie.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+    </layouts>
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
@@ -13,25 +25,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f1c4ee-b88a-40d7-bdbd-7f4048836bed" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.androidTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.unitTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/paho.mqtt.android.example/ESPAndroid.paho.mqtt.android.example.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/paho.mqtt.android.example/ESPAndroid.paho.mqtt.android.example.androidTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/paho.mqtt.android.example/ESPAndroid.paho.mqtt.android.example.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/paho.mqtt.android.example/ESPAndroid.paho.mqtt.android.example.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/paho.mqtt.android.example/ESPAndroid.paho.mqtt.android.example.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/paho.mqtt.android.example/ESPAndroid.paho.mqtt.android.example.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/paho.mqtt.android.example/ESPAndroid.paho.mqtt.android.example.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/paho.mqtt.android.example/ESPAndroid.paho.mqtt.android.example.unitTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.eclipse.paho.android.service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/org.eclipse.paho.android.service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.eclipse.paho.android.service/src/main/java/org/eclipse/paho/android/service/AlarmPingSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/org.eclipse.paho.android.service/src/main/java/org/eclipse/paho/android/service/AlarmPingSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.eclipse.paho.android.service/src/main/java/org/eclipse/paho/android/service/MqttService.java" beforeDir="false" afterPath="$PROJECT_DIR$/org.eclipse.paho.android.service/src/main/java/org/eclipse/paho/android/service/MqttService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/PahoExampleActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/PahoExampleActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Pogoda_icm.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Pogoda_icm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Ustawienia.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Ustawienia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/sterowanie.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/sterowanie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/setting.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/zuzycie.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/zuzycie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/activity_scrolling.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/activity_scrolling.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/alarm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/alarm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/sterowanie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/sterowanie.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/ustawienia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/ustawienia.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/zuzycie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/zuzycie.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[e8abdb0f]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\jacma\.android\avd\Medium_Phone.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -58,11 +94,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="ESPAndroid" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ESPAndroid" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -136,29 +167,43 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="1gHHOScuo9HuLX0ax56Y2LovA8t" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;AnalyzeApkAction.lastApkPath&quot;: &quot;D:/Android/ESPAndroid&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.android.tools.idea.devicemanager.tab&quot;: &quot;Physical&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Android/ESPAndroid/org.eclipse.paho.android.service&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "AnalyzeApkAction.lastApkPath": "D:/Android/ESPAndroid",
+    "Android App.paho.mqtt.android.example.executor": "Run",
+    "Gradle.ESPAndroid.executor": "Run",
+    "Gradle.Upgrade Gradle wrapper.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "TODO_SCOPE": "All Places",
+    "android-custom-viewC:/Users/jacma/AppData/Local/Android/Sdk/sources/android-33/android/view/View.java_SELECTED": "View",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.android.tools.idea.devicemanager.tab": "Physical",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jacma/.gradle",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
   }
-}</component>
+}]]></component>
   <component name="PsdUISettings">
     <option name="MODULES_LIST_MINIMIZE" value="true" />
-    <option name="MODULE_TAB" value="Default Config" />
+    <option name="MODULE_TAB" value="Properties" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
@@ -313,20 +358,21 @@
       </method>
     </configuration>
     <configuration name="org.eclipse.paho.android.sample" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="org.eclipse.paho.android.sample" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ALL_USERS" value="false" />
-      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="ALL_USERS" value="true" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="true" />
       <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -366,7 +412,7 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Callstack Sample" />
         <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
@@ -378,21 +424,23 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="paho.mqtt.android.example" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="paho.mqtt.android.example" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="ESPAndroid.paho.mqtt.android.example.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ALL_USERS" value="true" />
+      <option name="ALL_USERS" value="false" />
       <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
       <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -450,25 +498,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ESPAndroid" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -490,13 +519,7 @@
     <list>
       <item itemvalue="Android App.org.eclipse.paho.android.sample" />
       <item itemvalue="Android App.paho.mqtt.android.example" />
-      <item itemvalue="Gradle.ESPAndroid" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.ESPAndroid" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -517,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703343441667</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Naprawa2">
+      <created>1703500824301</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703500824301</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -541,7 +571,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Naprawa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Naprawa" />
+    <MESSAGE value="Naprawa2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Naprawa2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -554,7 +585,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Sterowanie.java</url>
-          <line>578</line>
+          <line>617</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -583,29 +614,9 @@
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/PahoExampleActivity.java</url>
-          <line>772</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/PahoExampleActivity.java</url>
-          <line>784</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/PahoExampleActivity.java</url>
-          <line>769</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/PahoExampleActivity.java</url>
-          <line>782</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/PahoExampleActivity.java</url>
-          <line>733</line>
-          <option name="timeStamp" value="21" />
+          <url>file://$PROJECT_DIR$/org.eclipse.paho.android.service/build.gradle</url>
+          <line>8</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
