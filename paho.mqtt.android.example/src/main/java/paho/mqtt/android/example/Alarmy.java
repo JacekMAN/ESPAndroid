@@ -1,4 +1,4 @@
-package paho.mqtt.java.example;
+package paho.mqtt.android.example;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -6,9 +6,8 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -29,7 +28,7 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
-public class alarmy extends AppCompatActivity {
+public class Alarmy extends AppCompatActivity {
 
 
     SharedPreferences Baza;

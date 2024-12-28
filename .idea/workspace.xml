@@ -5,7 +5,17 @@
       <config />
     </shared>
     <layouts>
+      <layout url="file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/activity_scrolling.xml">
+        <config>
+          <theme>@style/AppTheme.NoActionBar</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/alarm.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/alarmy.xml">
         <config>
           <theme>@style/AppTheme</theme>
         </config>
@@ -25,8 +35,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f1c4ee-b88a-40d7-bdbd-7f4048836bed" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/PahoExampleActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Promieniowanie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.androidTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/org.eclipse.paho.android.service/ESPAndroid.org.eclipse.paho.android.service.main.iml" afterDir="false" />
@@ -36,22 +51,34 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules/paho.mqtt.android.example/ESPAndroid.paho.mqtt.android.example.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/paho.mqtt.android.example/ESPAndroid.paho.mqtt.android.example.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/paho.mqtt.android.example/ESPAndroid.paho.mqtt.android.example.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/paho.mqtt.android.example/ESPAndroid.paho.mqtt.android.example.unitTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ESPAndroid.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ESPAndroid.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.eclipse.paho.android.sample/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/org.eclipse.paho.android.sample/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.eclipse.paho.android.sample/src/main/java/org/eclipse/paho/android/sample/activity/FragmentDrawer.java" beforeDir="false" afterPath="$PROJECT_DIR$/org.eclipse.paho.android.sample/src/main/java/org/eclipse/paho/android/sample/activity/FragmentDrawer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.eclipse.paho.android.sample/src/main/java/org/eclipse/paho/android/sample/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/org.eclipse.paho.android.sample/src/main/java/org/eclipse/paho/android/sample/activity/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.eclipse.paho.android.sample/src/main/java/org/eclipse/paho/android/sample/activity/SubscriptionFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/org.eclipse.paho.android.sample/src/main/java/org/eclipse/paho/android/sample/activity/SubscriptionFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.eclipse.paho.android.sample/src/main/java/org/eclipse/paho/android/sample/adapter/NavigationDrawerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/org.eclipse.paho.android.sample/src/main/java/org/eclipse/paho/android/sample/adapter/NavigationDrawerAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.eclipse.paho.android.service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/org.eclipse.paho.android.service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org.eclipse.paho.android.service/src/main/java/org/eclipse/paho/android/service/AlarmPingSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/org.eclipse.paho.android.service/src/main/java/org/eclipse/paho/android/service/AlarmPingSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org.eclipse.paho.android.service/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/org.eclipse.paho.android.service/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/org.eclipse.paho.android.service/src/main/java/org/eclipse/paho/android/service/MqttService.java" beforeDir="false" afterPath="$PROJECT_DIR$/org.eclipse.paho.android.service/src/main/java/org/eclipse/paho/android/service/MqttService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/PahoExampleActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/PahoExampleActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Pogoda_icm.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Pogoda_icm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Ustawienia.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Ustawienia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/sterowanie.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/sterowanie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/zuzycie.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/zuzycie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/activity_scrolling.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/activity_scrolling.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/alarm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/alarm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/sterowanie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/sterowanie.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/ustawienia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/ustawienia.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/zuzycie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/zuzycie.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Alarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Commons.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Commons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Miasto.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Miasto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/PahoExampleActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Pogoda_icm.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Pogoda_icm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Pogoda_menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Pogoda_menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Promieniowanie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/RadioaktywnoscAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/RadioaktywnoscAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Ustawienia.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Ustawienia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/alarmy.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Alarmy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Setting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/sterowanie.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Sterowanie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/zuzycie.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Zuzycie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +94,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\jacma\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Mat\.android\avd\Medium_Phone.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -161,6 +188,18 @@
     <option name="WARN_ABOUT_CRLF" value="false" />
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "matios13"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:JacekMAN/ESPAndroid.git",
+    "accountId": "028b57c3-663b-4135-a152-0ae0fbe869e4"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -185,13 +224,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TODO_SCOPE": "All Places",
     "android-custom-viewC:/Users/jacma/AppData/Local/Android/Sdk/sources/android-33/android/view/View.java_SELECTED": "View",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.android.tools.idea.devicemanager.tab": "Physical",
     "com.google.services.firebase.aqiPopupShown": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "test",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/jacma/.gradle",
@@ -550,6 +590,16 @@
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -578,13 +628,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/alarmy.java</url>
+          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Alarmy.java</url>
           <line>184</line>
           <properties field="button" class="paho.mqtt.java.example.alarmy" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Sterowanie.java</url>
+          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Sterowanie.java</url>
           <line>617</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -604,19 +654,19 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Ustawienia.java</url>
+          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Ustawienia.java</url>
           <line>47</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/java/example/Ustawienia.java</url>
+          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Ustawienia.java</url>
           <line>69</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/org.eclipse.paho.android.service/build.gradle</url>
-          <line>8</line>
-          <option name="timeStamp" value="16" />
+          <line>16</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

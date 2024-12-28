@@ -1,14 +1,17 @@
-package paho.mqtt.java.example;
+package paho.mqtt.android.example;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import paho.mqtt.android.example.R;
 
 /**
  * Created by DOM on 23.02.2017.

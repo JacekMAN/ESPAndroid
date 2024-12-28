@@ -1,4 +1,4 @@
-package paho.mqtt.java.example;
+package paho.mqtt.android.example;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;

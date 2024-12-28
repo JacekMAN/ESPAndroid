@@ -1,4 +1,4 @@
-package paho.mqtt.java.example;
+package paho.mqtt.android.example;
 
 import android.content.Context;
 import android.graphics.Color;

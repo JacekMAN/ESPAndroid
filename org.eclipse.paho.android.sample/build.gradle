@@ -1,54 +1,46 @@
-apply plugin: 'com.android.application'
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+}
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    namespace = "org.eclipse.paho.android.sample" // Removed extra space
+    compileSdk = 35 // Use compileSdk instead of compileSdkVersion
 
     defaultConfig {
-        applicationId rootProject.ext.sampleArchivesBaseName
-        minSdk 16
-        targetSdk 21
-        versionCode 1
-        versionName "0.1"
+        applicationId = "org.eclipse.paho.android.sample" // Use applicationId
+        minSdk = 30
+        targetSdk = 35
+        versionCode = 1
+        versionName = "0.1"
     }
+
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+            )
         }
     }
-    lintOptions {
-        abortOnError false
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
-    dexOptions {
-        preDexLibraries = false
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
-
-repositories {
-    maven { url rootProject.ext.mavenUrl }
-}
-
-
 
 dependencies {
-    //compile fileTree(dir: '../org.eclipse.paho.android/service/libs', excludes: ["org.eclipse.paho.client.mqttv3-${rootProject.ext.clientVersion}.jar"], include: '')
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
-    implementation "org.eclipse.paho:org.eclipse.paho.client.mqttv3:${rootProject.ext.clientVersion}"
-    implementation(project(':org.eclipse.paho.android.service')){
-        //exclude module: "org.eclipse.paho.client.mqttv3"
-        transitive=true
+    implementation("androidx.appcompat:appcompat:1.6.1") // Updated dependency
+    implementation("androidx.recyclerview:recyclerview:1.3.2") // Updated dependency
+    implementation("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5") // Updated dependency
+    implementation(project(":org.eclipse.paho.android.service")) {
+        transitive = true // Use transitive instead of transitive=true
     }
-
 }
 
-task publishAPK(type: Copy) {
-    from file("${project.buildDir}/outputs/apk/" + rootProject.ext.sampleArchivesBaseName + "-debug.apk");
-    into '/shared/technology/paho/Android/' + rootProject.ext.sampleVersion + '/debug/';
-}
-
-
-configurations.compile.exclude module: 'org.eclipse.paho.client.mqttv3'
-task debug << {
-    configurations.compile.each { println it}
-}
+// Removed custom tasks and configurations

@@ -1,10 +1,7 @@
-package paho.mqtt.java.example;
+package paho.mqtt.android.example;
 
 import android.content.Context;
-import android.text.NoCopySpan;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by DOM on 13.04.2017.

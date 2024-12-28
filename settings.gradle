@@ -1,4 +1,17 @@
-include ':paho.mqtt.android.example'
-include ':org.eclipse.paho.android.service'
-project(':org.eclipse.paho.android.service').projectDir = new File('org.eclipse.paho.android.service')
-project(':paho.mqtt.android.example').projectDir = new File('paho.mqtt.android.example')
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "ESPAndroid"
+include(":paho.mqtt.android.example")
+include(":org.eclipse.paho.android.service")
