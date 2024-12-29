@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
@@ -19,10 +18,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
@@ -100,7 +95,7 @@ public class Zuzycie extends AppCompatActivity {
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    private GoogleApiClient client;
+
 
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -550,8 +545,8 @@ public class Zuzycie extends AppCompatActivity {
         }
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+//        // See https://g.co/AppIndexing/AndroidStudio for more information.
+//        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
 
     }
@@ -928,84 +923,32 @@ public class Zuzycie extends AppCompatActivity {
         }
     }
 
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    public Action getIndexApiAction() {
-        Thing object = new Thing.Builder()
-                .setName("PahoExample Page") // TODO: Define a title for the content shown.
-                // TODO: Make sure this auto-generated URL is correct.
-                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
-                .build();
-        return new Action.Builder(Action.TYPE_VIEW)
-                .setObject(object)
-                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
-                .build();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        AppIndex.AppIndexApi.start(client, getIndexApiAction());
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(client, getIndexApiAction());
-        client.disconnect();
-    }
+//
 
     public void selectpiec(View view) {
         RadioButton wybor1 = (RadioButton) findViewById(R.id.p1);
         RadioButton wybor2 = (RadioButton) findViewById(R.id.p2);
         RadioButton wybor3 = (RadioButton) findViewById(R.id.p3);
         boolean checked = ((RadioButton) view).isChecked();
-        switch (view.getId()) {
-            case R.id.p1:
-                if (checked) {
-                    wybor1.setChecked(true);
-                    wybor2.setChecked(false);
-                    wybor3.setChecked(false);
-                    publishMessage("Piec12", "0");
-                }
-
-                break;
-
-            case R.id.p2:
-                if (checked) {
-                    wybor2.setChecked(true);
-                    wybor1.setChecked(false);
-                    wybor3.setChecked(false);
-                    publishMessage("Piec12", "2");
-
-                }
-
-                break;
-
-            case R.id.p3:
-                if (checked) {
-                    wybor3.setChecked(true);
-                    wybor1.setChecked(false);
-                    wybor2.setChecked(false);
-                    publishMessage("Piec12", "1");
-
-                }
-
-                break;
-
-
+        int id = view.getId();
+        if (checked) {
+            if (id == R.id.p1) {
+                wybor1.setChecked(true);
+                wybor2.setChecked(false);
+                wybor3.setChecked(false);
+                publishMessage("Piec12", "0");
+            } else if (id == R.id.p2) {
+                wybor2.setChecked(true);
+                wybor1.setChecked(false);
+                wybor3.setChecked(false);
+                publishMessage("Piec12", "2");
+            } else if (id == R.id.p3) {
+                wybor3.setChecked(true);
+                wybor1.setChecked(false);
+                wybor2.setChecked(false);
+                publishMessage("Piec12", "1");
+            }
         }
-
-
     }
 
 

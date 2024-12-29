@@ -5,14 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,10 +18,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.DisconnectedBufferOptions;
@@ -72,9 +68,7 @@ public class Sterowanie extends AppCompatActivity {
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    private GoogleApiClient client;
-
-
+//    private GoogleApiClient client;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -215,7 +209,6 @@ public class Sterowanie extends AppCompatActivity {
         });
 
 
-
         ImageButton gara1 = (ImageButton) findViewById(R.id.garaz11);
         gara1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -281,8 +274,6 @@ public class Sterowanie extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
 
 
         ImageButton lampawiata = (ImageButton) findViewById(R.id.wiata);
@@ -374,9 +365,6 @@ public class Sterowanie extends AppCompatActivity {
             ex.printStackTrace();
         }
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
 
@@ -427,9 +415,14 @@ public class Sterowanie extends AppCompatActivity {
 
 
                 double ala = new Double(message);
-                if (ala != 0) {button666.setColorFilter(Color.RED);}
-                if (ala != 0) {button666.setColorFilter(Color.RED);}
-                else {button666.setColorFilter(Color.GRAY);}
+                if (ala != 0) {
+                    button666.setColorFilter(Color.RED);
+                }
+                if (ala != 0) {
+                    button666.setColorFilter(Color.RED);
+                } else {
+                    button666.setColorFilter(Color.GRAY);
+                }
 
                 break;
 
@@ -439,13 +432,20 @@ public class Sterowanie extends AppCompatActivity {
 
 
                 double alan = new Double(message);
-                if (alan != 0) {podle.setColorFilter(Color.RED);podlewa =0;
-                    TextView pod2 = (TextView) findViewById (R.id.textView101);
-                    pod2.setText ("OFF"); }
-                if (alan != 0) {podle.setColorFilter(Color.RED);}
-                else {podle.setColorFilter(Color.GREEN);podlewa = 1;
-                    TextView pod2 = (TextView) findViewById (R.id.textView101);
-                    pod2.setText ("ON"); }
+                if (alan != 0) {
+                    podle.setColorFilter(Color.RED);
+                    podlewa = 0;
+                    TextView pod2 = (TextView) findViewById(R.id.textView101);
+                    pod2.setText("OFF");
+                }
+                if (alan != 0) {
+                    podle.setColorFilter(Color.RED);
+                } else {
+                    podle.setColorFilter(Color.GREEN);
+                    podlewa = 1;
+                    TextView pod2 = (TextView) findViewById(R.id.textView101);
+                    pod2.setText("ON");
+                }
 
                 break;
 
@@ -498,7 +498,7 @@ public class Sterowanie extends AppCompatActivity {
 
 
             case "S9/dane0" +
-                    "":                                                 // wiata czujnik 3
+                         "":                                                 // wiata czujnik 3
                 TextView lampaczas = (TextView) findViewById(R.id.textView8b);
                 double zmienna30 = new Double(message);
                 ImageButton lampabutton = (ImageButton) findViewById(R.id.imageButton88);
@@ -531,7 +531,6 @@ public class Sterowanie extends AppCompatActivity {
                     lampabutton2.setColorFilter(Color.GREEN);
                     lampa = 1;
                 }
-
 
 
         }
@@ -625,39 +624,37 @@ public class Sterowanie extends AppCompatActivity {
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    public Action getIndexApiAction() {
-        Thing object = new Thing.Builder()
-                .setName("PahoExample Page") // TODO: Define a title for the content shown.
-                // TODO: Make sure this auto-generated URL is correct.
-                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
-                .build();
-        return new Action.Builder(Action.TYPE_VIEW)
-                .setObject(object)
-                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
-                .build();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        AppIndex.AppIndexApi.start(client, getIndexApiAction());
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(client, getIndexApiAction());
-        client.disconnect();
-    }
-
-
+//    public Action getIndexApiAction() {
+//        Thing object = new Thing.Builder()
+//                .setName("PahoExample Page") // TODO: Define a title for the content shown.
+//                // TODO: Make sure this auto-generated URL is correct.
+//                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
+//                .build();
+//        return new Action.Builder(Action.TYPE_VIEW)
+//                .setObject(object)
+//                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
+//                .build();
+//    }
+//
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//
+//        // ATTENTION: This was auto-generated to implement the App Indexing API.
+//        // See https://g.co/AppIndexing/AndroidStudio for more information.
+//        client.connect();
+//        AppIndex.AppIndexApi.start(client, getIndexApiAction());
+//    }
+//
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//
+//        // ATTENTION: This was auto-generated to implement the App Indexing API.
+//        // See https://g.co/AppIndexing/AndroidStudio for more information.
+//        AppIndex.AppIndexApi.end(client, getIndexApiAction());
+//        client.disconnect();
+//    }
     private boolean sprawdzCzyWifi() {
 
         WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);

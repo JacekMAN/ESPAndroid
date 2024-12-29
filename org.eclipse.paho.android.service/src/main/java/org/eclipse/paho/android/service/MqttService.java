@@ -28,6 +28,8 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import org.eclipse.paho.client.mqttv3.DisconnectedBufferOptions;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.IMqttMessageListener;
@@ -40,7 +42,6 @@ import org.eclipse.paho.client.mqttv3.MqttSecurityException;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 
 /**
@@ -706,7 +707,7 @@ public class MqttService extends Service implements MqttTraceHandler {
         if (networkConnectionMonitor == null) {
             networkConnectionMonitor = new NetworkConnectionIntentReceiver();
             registerReceiver(networkConnectionMonitor, new IntentFilter(
-                    ConnectivityManager.CONNECTIVITY_ACTION));
+                    ConnectivityManager.CONNECTIVITY_ACTION), RECEIVER_NOT_EXPORTED);
         }
 
         if (Build.VERSION.SDK_INT < 14 /**Build.VERSION_CODES.ICE_CREAM_SANDWICH**/) {

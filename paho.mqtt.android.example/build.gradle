@@ -36,7 +36,6 @@ android {
 
 dependencies {
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
-    implementation 'com.google.android.gms:play-services-appindexing:9.8.0'
 // Explicitly include Paho MQTT client JAR
     testImplementation("junit:junit:4.13.2") // Updated dependency
     implementation("com.android.volley:volley:1.2.1")
@@ -49,5 +48,3 @@ dependencies {
     }
     // Removed play-services-appindexing dependency (deprecated)
 }
-
-// Removed custom tasks and configurations

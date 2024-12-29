@@ -7,4 +7,7 @@
     <color name="textColorSecondary">#727272</color>
     <color name="dividerColor">#B6B6B6</color>
     <color name="colorAccent">#7c4dff</color>
+    <color name="common_google_signin_btn_text_dark_default">#e1e1e1</color>
+    <color name="common_google_signin_btn_text_dark_focused">#FFFFFF</color>
+    <color name="common_google_signin_btn_text_dark_disabled">#AAAAAA</color>
 </resources>

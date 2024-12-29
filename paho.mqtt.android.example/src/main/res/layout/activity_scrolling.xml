@@ -197,7 +197,6 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="70dp"
                     android:background="#2d2c2c">
-                    android:layout_above="@+id/textView3"
 
 
                     <TextView
@@ -758,8 +757,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="155dp"
-                        android:tint="#000000"
-                        app:srcCompat="@android:drawable/ic_lock_power_off" />
+                        app:srcCompat="@android:drawable/ic_lock_power_off"
+                        app:tint="#000000" />
 
                     <ImageButton
                         android:id="@+id/imageButton6"
@@ -768,8 +767,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="80dp"
                         android:layout_marginTop="155dp"
-                        android:tint="#000000"
-                        app:srcCompat="@android:drawable/ic_lock_power_off" />
+                        app:srcCompat="@android:drawable/ic_lock_power_off"
+                        app:tint="#000000" />
 
                     <TextView
                         android:id="@+id/textView26"
