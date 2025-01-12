@@ -48,6 +48,7 @@ public class Sterowanie extends AppCompatActivity {
     int wiata = 10;
     int lampa = 10;
     int podlewa = 10;
+    int rolety = 0; // stan
 
     int podswietlanie = 0;
     int w1 = 0;
@@ -117,8 +118,16 @@ public class Sterowanie extends AppCompatActivity {
         UP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                publishMessage("S8/dane1", "22");
-                addToHistory("Rolety do góry !!!!");
+                if (rolety ==1){
+                    publishMessage("S8/dane1", "6");
+                    addToHistory("stop  !!!!");rolety=2;}
+
+                if (rolety ==0){
+                publishMessage("S8/dane1", "4");
+                addToHistory("Rolety do góry !!!!");rolety=1;}
+                if (rolety ==2) {rolety=0;}
+
+
                 final ImageButton button414 = (ImageButton) findViewById(R.id.imageButton414);
 
                 button414.setColorFilter(Color.GREEN);
@@ -136,12 +145,21 @@ public class Sterowanie extends AppCompatActivity {
         DOWN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                publishMessage("S8/dane1", "33");
-                addToHistory("Rolety na dół !!!!");
+                if (rolety ==1) {
+                    publishMessage("S8/dane1", "6");
+                    addToHistory("STOP !!!!");rolety=2;}
+
+
+                if (rolety ==0) {
+                publishMessage("S8/dane1", "5");
+                addToHistory("Rolety na dół !!!!");rolety=1;}
                 final ImageButton button414 = (ImageButton) findViewById(R.id.imageButton414);
 
+
+                if (rolety ==2) {rolety=0;}
                 button414.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
+                final
+                Handler handler = new Handler();       //  =============================
                 handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
                     @Override                                // czasu 400 - 400mili sekund
                     public void run() {                      //
