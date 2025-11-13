@@ -22,7 +22,7 @@
 
 
         <TextView
-            android:text="Ustawienie alarmów"
+            android:text="Ustawienie parametrów"
             android:layout_height="19dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="9dp"
@@ -53,11 +53,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="60dp"
-        android:text="Temperatura na piecu"
+        android:text="Ustawienia lamp"
         android:textColor="#fddd08" />
 
     <CheckBox
-        android:text="maksymalna temperatura"
+        android:text="maksymaln temperatura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"

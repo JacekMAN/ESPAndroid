@@ -64,6 +64,12 @@ import org.json.JSONObject;
 import java.sql.Time;
 import java.text.DecimalFormat;
 
+
+
+
+
+
+
 public class PahoExampleActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -113,6 +119,9 @@ public class PahoExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
 
@@ -156,10 +165,10 @@ public class PahoExampleActivity extends AppCompatActivity {
 
                 // publishMessage("S2/w1",""+w1);
                 if (wod == 0) {
-                    publishMessage("S2/w1", "1");
+                    publishMessage("S2/w11", "1");
                     addToHistory("Podgrzewanie wody włączone");
                 } else {
-                    publishMessage("S2/w1", "0");
+                    publishMessage("S2/w11", "0");
                     addToHistory("Podgrzewanie wody wyłączone");
                 }
 
@@ -175,10 +184,10 @@ public class PahoExampleActivity extends AppCompatActivity {
 
                 // publishMessage("S2/w1",""+w1);
                 if (gaz == 0) {
-                    publishMessage("S7/w2", "1");
+                    publishMessage("S7/w22", "1");
                     addToHistory("Podgrzewanie wody włączone");
                 } else {
-                    publishMessage("S7/w2", "0");
+                    publishMessage("S7/w22", "0");
                     addToHistory("Podgrzewanie wody wyłączone");
                 }
 
@@ -205,7 +214,7 @@ public class PahoExampleActivity extends AppCompatActivity {
             }
 
         });
-        ImageButton alarm = (ImageButton) findViewById(R.id.imageButton2);
+        FrameLayout alarm = (FrameLayout) findViewById(R.id.wodomierz);
         alarm.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -518,6 +527,32 @@ public class PahoExampleActivity extends AppCompatActivity {
                 }
                 break;
 
+            case "S5/woda":
+                TextView tempwoda = (TextView) findViewById(R.id.textViewwoda);
+                tempwoda.setText(message + "%");
+
+
+                double zmiennawoda = new Double(message);
+                tempwoda.setTextColor(Color.RED);
+                if (zmiennawoda >= 11) {
+                    tempwoda.setTextColor(Color.YELLOW);
+                }
+                if (zmiennawoda >= 50) {
+                    tempwoda.setTextColor(Color.GREEN);
+
+                }
+                int poziom = (int) zmiennawoda;
+                woda = (ProgressBar) findViewById(R.id.progresswoda);
+                woda.setProgress(poziom);
+                if (wynik > 50) {
+                    woda.setProgressTintList(ColorStateList.valueOf(Color.GREEN));
+                } else {
+                    woda.setProgressTintList(ColorStateList.valueOf(Color.YELLOW));
+                }
+
+
+                break;
+
             case "S10/dane1":
 
                 if (Baza.getString("ogrzewanie", "1").equals("0")) {
@@ -543,19 +578,22 @@ public class PahoExampleActivity extends AppCompatActivity {
 
                 if (Baza.getString("ogrzewanie", "1").equals("0")) {
                     TextView temp11 = (TextView) findViewById(R.id.textView13);
-                    temp11.setText("1H:    " + message + "kW");
+                    double moc = new Double(message);
+                    moc = moc/1000;
+
+                    temp11.setText(String.format("   %.2f kW", moc));
 
 
-                    double zmienna18 = new Double(message);
+
                     temp11.setTextColor(Color.RED);
-                    if (zmienna18 >= 1) {
+                    if (moc >= 5) {
                         temp11.setTextColor(Color.YELLOW);
                     }
-                    if (zmienna18 < 1) {
+                    if (moc < 5) {
                         temp11.setTextColor(Color.GREEN);
 
                     }
-                    if (zmienna18 >= 2) {
+                    if (moc >= 10) {
                         temp11.setTextColor(Color.RED);
                     }
                 }
@@ -612,7 +650,7 @@ public class PahoExampleActivity extends AppCompatActivity {
                 break;
 
 
-            case "S7/w1":
+            case "S7/w22":
                 TextView COstan = (TextView) findViewById(R.id.textView27);
                 double otw22 = new Double(message);
                 ImageButton button44 = (ImageButton) findViewById(R.id.imageButton6);
@@ -792,6 +830,70 @@ public class PahoExampleActivity extends AppCompatActivity {
                 }
                 break;
 
+            case "S3/w1":
+                FrameLayout wiata = (FrameLayout) findViewById(R.id.wiataL);
+                if (pm10.equals("tak")) {
+                    double d = new Double(message);
+
+                    if (d < 1){
+                        wiata.setBackgroundColor(Color.rgb(31, 135, 45));
+                         return;
+                    }
+                    if (d > 0){
+                        wiata.setBackgroundColor(Color.rgb(191, 179, 39));
+                        return;
+                    }
+                }
+                break;
+
+            case "S6/w1":
+                FrameLayout Tyl = (FrameLayout) findViewById(R.id.TylL);
+                if (pm10.equals("tak")) {
+                    double d = new Double(message);
+
+                    if (d < 1){
+                        Tyl.setBackgroundColor(Color.rgb(31, 135, 45));
+                        return;
+                    }
+                    if (d > 0){
+                        Tyl.setBackgroundColor(Color.rgb(191, 179, 39));
+                        return;
+                    }
+                }
+                break;
+            case "S9/w1":
+                FrameLayout wjazd = (FrameLayout) findViewById(R.id.wjazdL);
+                if (pm10.equals("tak")) {
+                    double d = new Double(message);
+
+                    if (d < 1){
+                        wjazd.setBackgroundColor(Color.rgb(31, 135, 45));
+                        return;
+                    }
+                    if (d > 0){
+                        wjazd.setBackgroundColor(Color.rgb(191, 179, 39));
+                        return;
+                    }
+                }
+                break;
+            case "S9/w11":
+                FrameLayout ogrod = (FrameLayout) findViewById(R.id.ogrodL);
+                if (pm10.equals("tak")) {
+                    double d = new Double(message);
+
+                    if (d < 1){
+                        ogrod.setBackgroundColor(Color.rgb(31, 135, 45));
+                        return;
+                    }
+                    if (d > 0){
+                        ogrod.setBackgroundColor(Color.rgb(191, 179, 39));
+                        return;
+                    }
+                }
+                break;
+
+
+
 
             case "S1/dane1":                                                 // woda czujnik 1
                 TextView temp1 = (TextView) findViewById(R.id.textView14);
@@ -882,12 +984,12 @@ public class PahoExampleActivity extends AppCompatActivity {
 
                 break;
 
-            case "S2/dane0":                                                 // woda czujnik 2
+            case "S2/dane10":                                                 // woda czujnik 2
                 TextView s20 = (TextView) findViewById(R.id.textView26);
                 double zmienna20 = new Double(message);
                 ImageButton button4 = (ImageButton) findViewById(R.id.imageButton4);
                 if (zmienna20 > 0) {
-                    s20.setText(message + " min");
+                    s20.setText("Timer");
                     button4.setColorFilter(Color.GREEN);
                     wod = 1;
                 }
@@ -958,17 +1060,17 @@ public class PahoExampleActivity extends AppCompatActivity {
                 }
                 break;
 
-            case "S7/dane1":
+            case "S7/dane11":
                 TextView temp24d = (TextView) findViewById(R.id.textView24d);
                 temp24d.setText(message + "`C");
                 break;
 
-            case "S7/dane6":
+            case "S7/dane7":
                 TextView temp23 = (TextView) findViewById(R.id.textView23);
                 temp23.setText(message + "`C");
                 break;
 
-            case "S7/dane2":
+            case "S7/dane22":
                 double zmi = new Double(message);
                 if (zmi == 0) {
                     RadioButton piec = (RadioButton) findViewById(R.id.piec);
@@ -997,26 +1099,31 @@ public class PahoExampleActivity extends AppCompatActivity {
                 }
 
                 break;
+
+            case "Piec50":
+                TextView t31 = (TextView) findViewById(R.id.textView24g);
+                double zm24i = new Double(message);
+                if (zm24i != 0) {
+                    t31.setText(" ");
+                } else {
+                    t31.setText("harmonogram OFF");
+                }
+
+                break;
             case "S7/dane3":
                 double zmiennaczasowa = new Double(message);
                 if (zmiennaczasowa == 1) {
                     TextView pokaz1 = (TextView) findViewById(R.id.textView24g);
                     pokaz1.setVisibility(View.INVISIBLE);
-                    TextView pokaz2 = (TextView) findViewById(R.id.textView24f);
-                    pokaz2.setVisibility(View.INVISIBLE);
                     TextView pokaz3 = (TextView) findViewById(R.id.textView24i);
                     pokaz3.setVisibility(View.INVISIBLE);
-                    TextView pokaz4 = (TextView) findViewById(R.id.textView24h);
-                    pokaz4.setVisibility(View.INVISIBLE);
+
                 } else {
                     TextView pokaz1 = (TextView) findViewById(R.id.textView24g);
                     pokaz1.setVisibility(View.VISIBLE);
-                    TextView pokaz2 = (TextView) findViewById(R.id.textView24f);
-                    pokaz2.setVisibility(View.VISIBLE);
                     TextView pokaz3 = (TextView) findViewById(R.id.textView24i);
                     pokaz3.setVisibility(View.VISIBLE);
-                    TextView pokaz4 = (TextView) findViewById(R.id.textView24h);
-                    pokaz4.setVisibility(View.VISIBLE);
+
                 }
 
 

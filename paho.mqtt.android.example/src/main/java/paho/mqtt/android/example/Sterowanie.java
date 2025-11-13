@@ -46,8 +46,10 @@ public class Sterowanie extends AppCompatActivity {
     String clientId = "";
     final String subscriptionTopic = "#";
     int wiata = 10;
+    int wiazd = 0;
     int lampa = 10;
     int podlewa = 10;
+    int Ogrod = 10;
     int rolety = 0; // stan
 
     int podswietlanie = 0;
@@ -176,12 +178,13 @@ public class Sterowanie extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                if (lampa == 0) {
-                    publishMessage("S9/w1", "1");
+                if (wiazd == 0) {
+                    publishMessageBB("S9/w1", "1");
                     addToHistory("WJAZD - oświetlenie -  włączona");
-                } else {
-                    publishMessage("S9/w1", "0");
-                    addToHistory("WJAZD - oświetlenie -  wyłączona");
+                }
+                if (wiazd > 0) {
+                    publishMessageBB("S9/w1", "0");
+                    addToHistory("WJAZD - oświetlenie -  wyłączona");wiazd=0;
                 }
 
             }
@@ -196,10 +199,10 @@ public class Sterowanie extends AppCompatActivity {
 
 
                 if (lampa == 0) {
-                    publishMessage("S6/w1", "1");
+                    publishMessageBB("S6/w1", "1");
                     addToHistory("Lampa za domem - włączona");
                 } else {
-                    publishMessage("S6/w1", "0");
+                    publishMessageBB("S6/w1", "0");
                     addToHistory("Lampa za domem - wyłączona");
                 }
 
@@ -215,11 +218,30 @@ public class Sterowanie extends AppCompatActivity {
 
 
                 if (podlewa == 0) {
-                    publishMessage("S9/w2", "0");
+                    publishMessageBB("S5/w3", "0");
                     addToHistory("Podlewanie - włączone");
                 } else {
-                    publishMessage("S9/w2", "1");
+                    publishMessageBB("S5/w3", "1");
                     addToHistory("Podlewanie - wyłączone");
+                }
+
+            }
+
+        });
+
+        ImageButton lampa1 = (ImageButton) findViewById(R.id.lampa313);
+        lampa1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+
+                if (Ogrod == 0) {
+                    publishMessageBB("S9/w11", "1");
+                    addToHistory("PLampa Ogród - włączone");
+                } else {
+                    publishMessageBB("S9/w11", "0");
+                    addToHistory("PLampa Ogród - wyłączone");
                 }
 
             }
@@ -426,6 +448,22 @@ public class Sterowanie extends AppCompatActivity {
                 }
                 break;
 
+            case "S9/w11":
+                TextView ogrod = (TextView) findViewById(R.id.textView313b);
+                ImageButton ogrod2 = (ImageButton) findViewById(R.id.imageButton313);
+                double ogr = new Double(message);
+                if (ogr == 0) {
+                    ogrod.setText(" ");
+                    Ogrod=0;
+                    ogrod2.setColorFilter(Color.GRAY);
+                }
+                if (ogr == 1) {
+                    Ogrod= 1;
+                    ogrod.setText("Timer");
+                    ogrod2.setColorFilter(Color.GREEN);
+                }
+                break;
+
 
             case "A0/dane0":
 
@@ -444,7 +482,7 @@ public class Sterowanie extends AppCompatActivity {
 
                 break;
 
-            case "S9/w22":
+            case "S5/w3":
 
                 ImageButton podle = (ImageButton) findViewById(R.id.imageButton103);
 
@@ -507,6 +545,8 @@ public class Sterowanie extends AppCompatActivity {
                 wjazd2.setVisibility(View.VISIBLE);
                 FrameLayout podlew = (FrameLayout) findViewById(R.id.podlewanie);
                 podlew.setVisibility(View.VISIBLE);
+                FrameLayout ogroda = (FrameLayout) findViewById(R.id.ogrod);
+                ogroda.setVisibility(View.VISIBLE);
 
                 FrameLayout alarm = (FrameLayout) findViewById(R.id.alarm);
                 alarm.setVisibility(View.VISIBLE);
@@ -515,21 +555,25 @@ public class Sterowanie extends AppCompatActivity {
                 break;
 
 
-            case "S9/dane0" +
-                         "":                                                 // wiata czujnik 3
+            case "S9/dane0":                                                // wiata czujnik 3
                 TextView lampaczas = (TextView) findViewById(R.id.textView8b);
                 double zmienna30 = new Double(message);
                 ImageButton lampabutton = (ImageButton) findViewById(R.id.imageButton88);
 
-                if (zmienna30 == 0) {
+                if (zmienna30 < 1) {
                     lampaczas.setText(" ");
                     lampabutton.setColorFilter(Color.GRAY);
                     lampa = 0;
                 }
-                if (zmienna30 > 0) {
-                    lampaczas.setText(message + " min");
+                if (zmienna30 == 1) {
+                    lampaczas.setText("Timer");
                     lampabutton.setColorFilter(Color.GREEN);
-                    lampa = 1;
+                    lampa = 1;wiazd =1;
+                                    }
+                if (zmienna30 ==2) {
+                    lampaczas.setText("5 min");
+                    lampabutton.setColorFilter(Color.GREEN);
+                    lampa = 1;wiazd =1;
                 }
 
                 break;
@@ -622,6 +666,24 @@ public class Sterowanie extends AppCompatActivity {
         }
     }
 
+    public void publishMessageBB(String publishTopic, String publishMessage) {
+
+        try {
+            MqttMessage message = new MqttMessage();
+            message.setQos(1);           // QoS 1
+            message.setRetained(true);   // Retain = true
+            message.setPayload(publishMessage.getBytes());
+            mqttAndroidClient.publish(publishTopic, message);
+            addToHistory("wiadomość Wysłana");
+            if (!mqttAndroidClient.isConnected()) {
+                addToHistory(mqttAndroidClient.getBufferedMessageCount() + " wiadomość  zbuforowana");
+            }
+        } catch (MqttException e) {
+            System.err.println("Błąd wysyłania: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
     public void publishMessage(String publishTopic, String publishMessage) {
 
         try {
@@ -637,6 +699,7 @@ public class Sterowanie extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.

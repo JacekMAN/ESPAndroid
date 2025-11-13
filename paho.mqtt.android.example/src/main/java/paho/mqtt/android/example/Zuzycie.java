@@ -8,10 +8,9 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.CheckBox;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -41,6 +40,8 @@ public class Zuzycie extends AppCompatActivity {
     double zadana = 0;
 
     double zadana10 = 0;
+    int gaz = 0;
+    int woda = 0;
     double zadana2 = 0;
     double zadana3 = 0;
     double zadana4 = 0;
@@ -59,6 +60,10 @@ public class Zuzycie extends AppCompatActivity {
     double p24 = 0;
     double p29 = 0;
     double p12 = 0;
+    double harmo = 0;
+    double awaryjne = 0;
+    double awaryjne1 = 0;
+
 
 
     String p15;
@@ -128,345 +133,106 @@ public class Zuzycie extends AppCompatActivity {
         zadplus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                zadana = zadana * 10;
-                zadana = zadana + 1;
-                zadana = zadana / 10;
+             if (awaryjne ==0){    publishMessage("Piec0", "1");
+                addToHistory("Piec podnosi temperature");}
+             else { if (awaryjne1 == 0) { awaryjne =21; publishMessageBB("S7/awaryjne1", "21"); }
+                 awaryjne1 = awaryjne1 +0.1;double str = Math.round(awaryjne1 * 10.0) / 10.0; String str2 = String.valueOf(str);;  publishMessage("S7/awaryjne1", str2);
+
+             }
 
 
-                wynik = new Double(zadana).toString();
-                String w13 = wynik.substring(0, 2);
-                String w14 = wynik.substring(3);
-                TextView piec13 = (TextView) findViewById(R.id.piec13);
-                piec13.setText(wynik);
-                publishMessage("Piec13", w13);
-                publishMessage("Piec14", w14 + "0");
-                zadplus.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
-                handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
-                    @Override
 
-
-                    // czasu 400 - 400mili sekund
-                    public void run() {                      //
-                        zadplus.setColorFilter(Color.GRAY); // < ta funkcja jest wykonywana
-                    }                                        //   po zadanej przerwie
-                }, 500);
             }
         });
         ImageButton zadminus = (ImageButton) findViewById(R.id.zadanaminus);
         zadminus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                zadana = zadana * 10;
-                zadana = zadana - 1;
-                zadana = zadana / 10;
+             if (awaryjne == 0){   publishMessage("Piec0", "2");
+                addToHistory("Piec obniża temperature");}
 
+             else  { if (awaryjne1 == 0) { awaryjne =21; publishMessageBB("S7/awaryjne1", "21"); }
+                 awaryjne1 = awaryjne1 -0.1;double str = Math.round(awaryjne1 * 10.0) / 10.0; String str2 = String.valueOf(str);;  publishMessage("S7/awaryjne1", str2);
 
-                wynik = new Double(zadana).toString();
-                String w13 = wynik.substring(0, 2);
-                String w14 = wynik.substring(3);
-                TextView piec13 = (TextView) findViewById(R.id.piec13);
-                piec13.setText(wynik);
-                publishMessage("Piec13", w13);
-                publishMessage("Piec14", w14 + "0");
-                zadminus.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
-                handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
-                    @Override                                // czasu 400 - 400mili sekund
-                    public void run() {                      //
-                        zadminus.setColorFilter(Color.GRAY); // < ta funkcja jest wykonywana
-                    }                                        //   po zadanej przerwie
-                }, 500);
+             }
             }
+            
+
         });
 ////uiouoiui-------------------------------------------------------------------------------------------------------
 
 
-        ImageButton zadminus6 = (ImageButton) findViewById(R.id.zadanaminus6);
-        zadminus6.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ImageButton button6 = (ImageButton) findViewById(R.id.imageButton6);
+        button6.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                zadana10 = zadana10 * 10;
-                if (zadana10 > 1) {
-                    zadana10 = zadana10 - 1;
+
+                // publishMessage("S2/w1",""+w1);
+                if (awaryjne == 0) {
+                    publishMessageBB("S7/awaryjne", "1");
+                    addToHistory("Ogrzewanie awaryjne ON");
+                } else {
+                    publishMessageBB("S7/awaryjne", "0");
+                    addToHistory("Ogrzewanie OFF");
                 }
-                zadana10 = zadana10 / 10;
 
-
-                wynik = new Double(zadana10).toString();
-                String w13 = wynik.substring(0, 1);
-                String w14 = wynik.substring(2);
-                TextView piec13 = (TextView) findViewById(R.id.piec31);
-                piec13.setText(wynik);
-                publishMessage("Piec31", w13);
-                publishMessage("Piec32", w14);
-                zadminus.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
-                handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
-                    @Override                                // czasu 400 - 400mili sekund
-                    public void run() {                      //
-                        zadminus.setColorFilter(Color.GRAY); // < ta funkcja jest wykonywana
-                    }                                        //   po zadanej przerwie
-                }, 500);
             }
+
         });
-        ImageButton zadplus6 = (ImageButton) findViewById(R.id.zadanaplus6);
-        zadplus6.setOnClickListener(new View.OnClickListener() {
+        ImageButton button4 = (ImageButton) findViewById(R.id.imageButton4);
+        button4.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                zadana10 = zadana10 * 10;
-                if (zadana10 < 20) {
-                    zadana10 = zadana10 + 1;
+
+                // publishMessage("S2/w1",""+w1);
+                if (woda == 0) {
+                    publishMessageBB("S7/awaryjne2", "1");
+                    addToHistory("Podgrzewanie wody włączone");woda=1;
+                } else {
+                    publishMessage("S7/awaryjne2", "0");
+                    addToHistory("Podgrzewanie wody wyłączone");woda=0;
                 }
-                zadana10 = zadana10 / 10;
 
-
-                wynik = new Double(zadana10).toString();
-                String w13 = wynik.substring(0, 1);
-                String w14 = wynik.substring(2);
-                TextView piec13 = (TextView) findViewById(R.id.piec31);
-                piec13.setText(wynik);
-                publishMessage("Piec31", w13);
-                publishMessage("Piec32", w14);
-                zadminus.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
-                handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
-                    @Override                                // czasu 400 - 400mili sekund
-                    public void run() {                      //
-                        zadminus.setColorFilter(Color.GRAY); // < ta funkcja jest wykonywana
-                    }                                        //   po zadanej przerwie
-                }, 500);
             }
+
         });
-        ImageButton zadminus2 = (ImageButton) findViewById(R.id.zadanaminus2);
-        zadminus2.setOnClickListener(new View.OnClickListener() {
+        ImageButton button9 = (ImageButton) findViewById(R.id.imageButton9);
+        button9.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                zadana2 = zadana2 - 1;
-                String w19 = new Double(zadana2).toString();
-                String w191 = w19.substring(0, 2);
-                TextView piec19 = (TextView) findViewById(R.id.piec19);
-                piec19.setText(w19);
-                TextView piec190 = (TextView) findViewById(R.id.textpiec1);
-                piec190.setText(w191);
-                publishMessage("Piec19", w191);
-                zadminus2.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
-                handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
-                    @Override                                // czasu 400 - 400mili sekund
-                    public void run() {                      //
-                        zadminus2.setColorFilter(Color.GRAY); // < ta funkcja jest wykonywana
-                    }                                        //   po zadanej przerwie
-                }, 500);
-            }
-        });
 
-        ImageButton zadplus2 = (ImageButton) findViewById(R.id.zadanaplus2);
-        zadplus2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                zadana2 = zadana2 + 1;
-                String w19 = new Double(zadana2).toString();
-                String w191 = w19.substring(0, 2);
-                TextView piec19 = (TextView) findViewById(R.id.piec19);
-                piec19.setText(w19);
-                publishMessage("Piec19", w191);
-                zadplus2.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
-                handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
-                    @Override                                // czasu 400 - 400mili sekund
-                    public void run() {                      //
-                        zadplus2.setColorFilter(Color.GRAY); // < ta funkcja jest wykonywana
-                    }                                        //   po zadanej przerwie
-                }, 500);
-            }
-        });
+                // publishMessage("S2/w1",""+w1);
+                if (harmo == 0) {
+                    publishMessageBB("Piec50", "1");
+                    addToHistory("Harmonogram włączony");
+                } else {
+                    publishMessageBB("Piec50", "0");
+                    addToHistory("Harmonogram wyłączony");
+                }
 
-        ImageButton zadplus3 = (ImageButton) findViewById(R.id.zadanaplus3);
-        zadplus3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                zadana3 = zadana3 + 1;
-                String w24 = new Double(zadana3).toString();
-                String w192 = w24.substring(0, 2);
-                TextView piec24 = (TextView) findViewById(R.id.piec24);
-                piec24.setText(w24);
-                publishMessage("Piec24", w192);
-                zadplus3.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
-                handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
-                    @Override                                // czasu 400 - 400mili sekund
-                    public void run() {                      //
-                        zadplus3.setColorFilter(Color.GRAY); // < ta funkcja jest wykonywana
-                    }                                        //   po zadanej przerwie
-                }, 500);
             }
-        });
 
-        ImageButton zadminus3 = (ImageButton) findViewById(R.id.zadanaminus3);
-        zadminus3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                zadana3 = zadana3 - 1;
-                String w24 = new Double(zadana3).toString();
-                String w192 = w24.substring(0, 2);
-                TextView piec24 = (TextView) findViewById(R.id.piec24);
-                piec24.setText(w24);
-                publishMessage("Piec24", w192);
-                zadminus3.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
-                handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
-                    @Override                                // czasu 400 - 400mili sekund
-                    public void run() {                      //
-                        zadminus3.setColorFilter(Color.GRAY); // < ta funkcja jest wykonywana
-                    }                                        //   po zadanej przerwie
-                }, 500);
-            }
-        });
-
-        ImageButton zadplus4 = (ImageButton) findViewById(R.id.zadanaplus4);
-        zadplus4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                zadana4 = zadana4 + 1;
-                String w29 = new Double(zadana4).toString();
-                String w191 = w29.substring(0, 2);
-                TextView piec29 = (TextView) findViewById(R.id.piec29);
-                piec29.setText(w29);
-                publishMessage("Piec29", w191);
-                zadplus4.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
-                handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
-                    @Override                                // czasu 400 - 400mili sekund
-                    public void run() {                      //
-                        zadplus4.setColorFilter(Color.GRAY); // < ta funkcja jest wykonywana
-                    }                                        //   po zadanej przerwie
-                }, 500);
-            }
-        });
-        ImageButton zadminus4 = (ImageButton) findViewById(R.id.zadanaminus4);
-        zadminus4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                zadana4 = zadana4 - 1;
-                String w29 = new Double(zadana4).toString();
-                String w191 = w29.substring(0, 2);
-                TextView piec29 = (TextView) findViewById(R.id.piec29);
-                piec29.setText(w29);
-                publishMessage("Piec29", w191);
-                zadminus4.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
-                handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
-                    @Override                                // czasu 400 - 400mili sekund
-                    public void run() {                      //
-                        zadminus4.setColorFilter(Color.GRAY); // < ta funkcja jest wykonywana
-                    }                                        //   po zadanej przerwie
-                }, 500);
-            }
-        });
-
-        ImageButton zadminus5 = (ImageButton) findViewById(R.id.zadanaminus5);
-        zadminus5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                zadana5 = zadana5 - 5;
-                if (zadana5 < 5) {
-                    zadana5 = 5;
-                }
-                String w29 = new Double(zadana5).toString();
-                String w191 = w29.substring(0, 2);
-                TextView piec29 = (TextView) findViewById(R.id.piec30);
-                piec29.setText(w191 + "min");
-                publishMessage("Piec30", w191);
-                zadminus5.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
-                handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
-                    @Override                                // czasu 400 - 400mili sekund
-                    public void run() {                      //
-                        zadminus5.setColorFilter(Color.GRAY); // < ta funkcja jest wykonywana
-                    }                                        //   po zadanej przerwie
-                }, 500);
-            }
-        });
-        ImageButton zadplus5 = (ImageButton) findViewById(R.id.zadanaplus5);
-        zadplus5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                zadana5 = zadana5 + 5;
-                if (zadana5 > 240) {
-                    zadana5 = 240;
-                }
-                String w29 = new Double(zadana5).toString();
-                String w191 = w29.substring(0, 2);
-                TextView piec29 = (TextView) findViewById(R.id.piec30);
-                piec29.setText(w191 + "min");
-                publishMessage("Piec30", w191);
-                zadminus5.setColorFilter(Color.GREEN);
-                final Handler handler = new Handler();       //  =============================
-                handler.postDelayed(new Runnable() {         //  Funkcja wykonywana op upływie
-                    @Override                                // czasu 400 - 400mili sekund
-                    public void run() {                      //
-                        zadminus5.setColorFilter(Color.GRAY); // < ta funkcja jest wykonywana
-                    }                                        //   po zadanej przerwie
-                }, 500);
-            }
-        });
-
-
-        CheckBox wy0 = (CheckBox) findViewById(R.id.czasowe0);
-        wy0.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                if (parametr[1] != 1) {
-                    publishMessage("Piec8", "1");
-                }
-                if (parametr[1] == 1) {
-                    publishMessage("Piec8", "0");
-                }
-            }
-        });
-        CheckBox wy1 = (CheckBox) findViewById(R.id.czasowe5);
-        wy1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                if (parametr[0] != 1) {
-                    publishMessage("Piec7", "1");
-                }
-                if (parametr[0] == 1) {
-                    publishMessage("Piec7", "0");
-                }
-            }
-        });
-        CheckBox wy2 = (CheckBox) findViewById(R.id.czasowe1);
-        wy2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                if (parametr[2] != 1) {
-                    publishMessage("Piec9", "1");
-                }
-                if (parametr[2] == 1) {
-                    publishMessage("Piec9", "0");
-                }
-            }
-        });
-        CheckBox wy3 = (CheckBox) findViewById(R.id.czasowe2);
-        wy3.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                if (parametr[3] != 1) {
-                    publishMessage("Piec10", "1");
-                }
-                if (parametr[3] == 1) {
-                    publishMessage("Piec10", "0");
-                }
-            }
-        });
-        CheckBox wy4 = (CheckBox) findViewById(R.id.czasowe3);
-        wy4.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                if (parametr[4] != 1) {
-                    publishMessage("Piec11", "1");
-                }
-                if (parametr[4] == 1) {
-                    publishMessage("Piec11", "0");
-                }
-            }
         });
 
         mqttAndroidClient = new MqttAndroidClient(getApplicationContext(), serverUri, clientId);
@@ -551,7 +317,7 @@ public class Zuzycie extends AppCompatActivity {
 
     }
 
-    ;
+
 
 
     public void subscribeToTopic() {
@@ -608,7 +374,7 @@ public class Zuzycie extends AppCompatActivity {
 
                 break;
 
-            case "Piec13":
+            case "S7/dane11":
 
 
                 p13 = new Double(message);
@@ -616,79 +382,169 @@ public class Zuzycie extends AppCompatActivity {
 
                 break;
 
-            case "Piec31":
-
-                p31 = new Double(message);
-
-                break;
-
-            case "Piec32":
+            case "S7/awaryjne1":
 
 
-                p32 = new Double(message);
+                awaryjne1 = new Double(message);
 
 
                 break;
-            case "Piec15":
-                p15 = message;
-                break;
-            case "Piec16":
-                p16 = message;
-                break;
-            case "Piec17":
-                p17 = message;
-                break;
-            case "Piec18":
-                p18 = message;
-                break;
-            case "Piec20":
-                p20 = message;
-                break;
-            case "Piec21":
-                p21 = message;
-                break;
-            case "Piec22":
-                p22 = message;
-                break;
-            case "Piec23":
-                p23 = message;
-                break;
-
-            case "Piec25":
-                p25 = message;
-                break;
-            case "Piec26":
-                p26 = message;
-                break;
-            case "Piec27":
-                p27 = message;
-                break;
-            case "Piec28":
-                p28 = message;
-                break;
 
 
-            case "Piec19":
+            case "S7/dane2":
+                double zmi = new Double(message);
+                if (zmi == 0) {
+                    RadioButton piec = (RadioButton) findViewById(R.id.piec);
+                    piec.setVisibility(View.INVISIBLE);
 
+                } else {
+                    RadioButton piec = (RadioButton) findViewById(R.id.piec);
+                    piec.setVisibility(View.VISIBLE);
 
-                p19 = new Double(message);
-
-
-                break;
-            case "Piec24":
-
-
-                p24 = new Double(message);
-
-
-                break;
-            case "Piec29":
-
-
-                p29 = new Double(message);
-
+                }
 
                 break;
+            case "S7/awaryjne2":
+                double zzmi = new Double(message);
+                TextView COstan2 = (TextView) findViewById(R.id.textView27b);
+                ImageButton button244 = (ImageButton) findViewById(R.id.imageButton4);
+                RadioButton woda = (RadioButton) findViewById(R.id.woda);
+
+                if (zzmi == 0) {
+                    COstan2.setText(" ");
+                    woda.setVisibility(View.INVISIBLE);
+                    button244.setColorFilter(Color.BLACK);
+                } else {
+                    COstan2.setText("ON");
+                    woda.setVisibility(View.VISIBLE);
+                    button244.setColorFilter(Color.GREEN);
+
+                }
+
+                break;
+
+            case "Piec50":
+                TextView harmonogram = (TextView) findViewById(R.id.textView191);
+                TextView harmonogr = (TextView) findViewById(R.id.textpiec22);
+                ImageButton button144 = (ImageButton) findViewById(R.id.imageButton9);
+                harmo = new Double(message);
+                if (harmo == 0) {
+                    harmonogram.setText("OFF");harmonogr.setTextColor(Color.YELLOW);
+                    button144.setColorFilter(Color.BLACK);
+
+
+                } else {
+                    harmonogram.setText("ON");harmonogr.setTextColor(Color.WHITE);
+                    button144.setColorFilter(Color.GREEN);
+                }
+
+                break;
+
+            case "S1/dane7":
+
+                TextView temp7 = (TextView) findViewById(R.id.zadana1);
+
+                temp7.setText(message + "`C");
+                double zmienna2 = new Double(message);
+                temp7.setTextColor(Color.RED);
+                if (zmienna2 >= 15) {
+                    temp7.setTextColor(Color.YELLOW);
+                }
+                if (zmienna2 >= 20) {
+                    temp7.setTextColor(Color.GREEN);
+                }
+                break;
+
+            case "S1/dane8":
+                TextView temp8 = (TextView) findViewById(R.id.zadana2);
+                temp8.setText(message + "`C");
+
+
+                double zmienna8 = new Double(message);
+                temp8.setTextColor(Color.RED);
+                if (zmienna8 >= 15) {
+                    temp8.setTextColor(Color.YELLOW);
+                }
+                if (zmienna8 >= 20) {
+                    temp8.setTextColor(Color.GREEN);
+
+                }
+                break;
+
+            case "S7/dodatkowe":
+                TextView temp18 = (TextView) findViewById(R.id.zadana3);
+                temp18.setText(message + "`C");
+
+
+                double zmienna18 = new Double(message);
+                temp18.setTextColor(Color.RED);
+                if (zmienna18 >= 15) {
+                    temp18.setTextColor(Color.YELLOW);
+                }
+                if (zmienna18 >= 20) {
+                    temp18.setTextColor(Color.GREEN);
+
+                }
+                break;
+            case "S2/dane0":
+                double zmi3 = new Double(message);
+                if (zmi3 == 0) {
+                    RadioButton piec = (RadioButton) findViewById(R.id.piec);
+                    piec.setVisibility(View.INVISIBLE);
+
+                } else {
+                    RadioButton piec = (RadioButton) findViewById(R.id.piec);
+                    piec.setVisibility(View.VISIBLE);
+                }
+
+                break;
+
+
+            case "S7/awaryjne":
+                TextView COstan = (TextView) findViewById(R.id.textView27);
+                awaryjne = new Double(message);
+                ImageButton button44 = (ImageButton) findViewById(R.id.imageButton6);
+                if (awaryjne == 0) {
+                    COstan.setText("  ");
+                    button44.setColorFilter(Color.BLACK);
+
+
+
+                    FrameLayout T1 = (FrameLayout) findViewById(R.id.T1);
+
+
+
+                }
+                if (awaryjne == 1) {
+                    COstan.setText("ON");
+                    button44.setColorFilter(Color.GREEN);
+                    publishMessageBB("S7/w22", "0");
+
+                    FrameLayout T1 = (FrameLayout) findViewById(R.id.T1);
+                    T1.setVisibility(View.VISIBLE);
+
+
+                }
+                break;
+
+            case "S2/dane9":
+                TextView temp118 = (TextView) findViewById(R.id.zadana0);
+                temp118.setText(message + "`C");
+
+
+                double zmienna118 = new Double(message);
+                temp118.setTextColor(Color.RED);
+                if (zmienna118 >= 15) {
+                    temp118.setTextColor(Color.YELLOW);
+                }
+                if (zmienna118 >= 20) {
+                    temp118.setTextColor(Color.GREEN);
+
+                }
+                break;
+
+
+
             case "Piec12":
 
 
@@ -696,203 +552,58 @@ public class Zuzycie extends AppCompatActivity {
                 RadioButton wybor1 = (RadioButton) findViewById(R.id.p1);
                 RadioButton wybor2 = (RadioButton) findViewById(R.id.p2);
                 RadioButton wybor3 = (RadioButton) findViewById(R.id.p3);
+                RadioButton wybor4 = (RadioButton) findViewById(R.id.p4);
 
                 if (p12 == 1) {
                     wybor3.setChecked(true);
                     wybor2.setChecked(false);
                     wybor1.setChecked(false);
+                    wybor4.setChecked(false);
                 }
                 ;
                 if (p12 == 2) {
                     wybor2.setChecked(true);
                     wybor3.setChecked(false);
                     wybor1.setChecked(false);
+                    wybor4.setChecked(false);
                 }
                 ;
                 if (p12 == 0) {
                     wybor1.setChecked(true);
                     wybor2.setChecked(false);
                     wybor3.setChecked(false);
+                    wybor4.setChecked(false);
+                }
+                ;
+                if (p12 == 3) {
+                    wybor4.setChecked(true);
+                    wybor2.setChecked(false);
+                    wybor3.setChecked(false);
+                    wybor1.setChecked(false);
                 }
                 ;
 
 
-                break;
-
-            case "Piec8":
-                Double wybor = new Double(message);
-                if (wybor == 0) {
-                    parametr[1] = 0;
-                    CheckBox wy0 = (CheckBox) findViewById(R.id.czasowe0);
-                    wy0.setChecked(true);
-                    wy0.setText("ON");
-                    TextView piec13 = (TextView) findViewById(R.id.textpiec2);
-                    piec13.setTextColor(Ok);
-                    TextView piec30 = (TextView) findViewById(R.id.piec13);
-                    piec30.setTextColor(Ok);
-                }
-                if (wybor != 0) {
-                    parametr[1] = 1;
-                    CheckBox wy1 = (CheckBox) findViewById(R.id.czasowe0);
-                    wy1.setChecked(false);
-                    wy1.setText("OFF");
-                    TextView piec13 = (TextView) findViewById(R.id.textpiec2);
-                    piec13.setTextColor(Czerwony);
-                    TextView piec30 = (TextView) findViewById(R.id.piec13);
-                    piec30.setTextColor(Czerwony);
-                }
-
-
-                break;
-            case "Piec7":
-                Double wybor5 = new Double(message);
-                if (wybor5 == 0) {
-                    parametr[0] = 0;
-                    CheckBox wy0 = (CheckBox) findViewById(R.id.czasowe5);
-                    wy0.setChecked(true);
-                    wy0.setText("ON");
-                    TextView piec13 = (TextView) findViewById(R.id.textpiec7);
-                    piec13.setTextColor(Ok);
-                    TextView piec30 = (TextView) findViewById(R.id.piec30);
-                    piec30.setTextColor(Ok);
-                }
-                if (wybor5 != 0) {
-                    parametr[0] = 1;
-                    CheckBox wy1 = (CheckBox) findViewById(R.id.czasowe5);
-                    wy1.setChecked(false);
-                    wy1.setText("OFF");
-                    TextView piec13 = (TextView) findViewById(R.id.textpiec7);
-                    piec13.setTextColor(Czerwony);
-                    TextView piec30 = (TextView) findViewById(R.id.piec30);
-                    piec30.setTextColor(Czerwony);
-                }
-
-                break;
-            case "Piec9":
-                Double wyb1 = new Double(message);
-                if (wyb1 == 0) {
-                    parametr[2] = 0;
-                    CheckBox wy0 = (CheckBox) findViewById(R.id.czasowe1);
-                    wy0.setChecked(true);
-                    wy0.setText("ON");
-                    TextView piec13 = (TextView) findViewById(R.id.textpiec3);
-                    piec13.setTextColor(Ok);
-                    TextView piec30 = (TextView) findViewById(R.id.piec19);
-                    piec30.setTextColor(Ok);
-                }
-                if (wyb1 != 0) {
-                    parametr[2] = 1;
-                    CheckBox wy0 = (CheckBox) findViewById(R.id.czasowe1);
-                    wy0.setChecked(false);
-                    wy0.setText("OFF");
-                    TextView piec13 = (TextView) findViewById(R.id.textpiec3);
-                    piec13.setTextColor(Czerwony);
-                    TextView piec30 = (TextView) findViewById(R.id.piec19);
-                    piec30.setTextColor(Czerwony);
-                }
-
-
-                break;
-            case "Piec10":
-                Double wyb2 = new Double(message);
-                if (wyb2 == 0) {
-                    parametr[3] = 0;
-                    CheckBox wy0 = (CheckBox) findViewById(R.id.czasowe2);
-                    wy0.setChecked(true);
-                    wy0.setText("ON");
-                    TextView piec13 = (TextView) findViewById(R.id.textpiec4);
-                    piec13.setTextColor(Ok);
-                    TextView piec30 = (TextView) findViewById(R.id.piec24);
-                    piec30.setTextColor(Ok);
-                }
-                if (wyb2 != 0) {
-                    parametr[3] = 1;
-                    CheckBox wy0 = (CheckBox) findViewById(R.id.czasowe2);
-                    wy0.setChecked(false);
-                    wy0.setText("OFF");
-                    TextView piec13 = (TextView) findViewById(R.id.textpiec4);
-                    piec13.setTextColor(Czerwony);
-                    TextView piec30 = (TextView) findViewById(R.id.piec24);
-                    piec30.setTextColor(Czerwony);
-                }
-
 
                 break;
 
-            case "Piec11":
-                Double wyb3 = new Double(message);
-                if (wyb3 == 0) {
-                    parametr[4] = 0;
-                    CheckBox wy0 = (CheckBox) findViewById(R.id.czasowe3);
-                    wy0.setChecked(true);
-                    wy0.setText("ON");
-                    TextView piec13 = (TextView) findViewById(R.id.textpiec5);
-                    piec13.setTextColor(Ok);
-                    TextView piec30 = (TextView) findViewById(R.id.piec29);
-                    piec30.setTextColor(Ok);
-                }
-                if (wyb3 != 0) {
-                    parametr[4] = 1;
-                    CheckBox wy0 = (CheckBox) findViewById(R.id.czasowe3);
-                    wy0.setChecked(false);
-                    wy0.setText("OFF");
-                    TextView piec13 = (TextView) findViewById(R.id.textpiec5);
-                    piec13.setTextColor(Czerwony);
-                    TextView piec30 = (TextView) findViewById(R.id.piec29);
-                    piec30.setTextColor(Czerwony);
-                }
 
 
-                break;
-
-            case "Piec30":
-                String opuznienie = message;
-                zadana5 = new Double(message);
-                TextView piec30 = (TextView) findViewById(R.id.piec30);
-                piec30.setText(opuznienie + "min");
 
 
-                break;
 
         }
 
 
-        zadana = p13 + (p14 / 100);
-        zadana10 = p31 + (p32 / 10);
 
-        String granica = new Double(zadana10).toString();
 
-        wynik = new Double(zadana).toString();
-        String wynik1 = new Double(p19).toString();
-        zadana2 = p19;
-        String wynik2 = new Double(p24).toString();
-        zadana3 = p24;
-        String wynik3 = new Double(p29).toString();
-        zadana4 = p29;
+
+
+
+
         TextView piec13 = (TextView) findViewById(R.id.piec13);
+       if (awaryjne ==0) {wynik = new Double(p13).toString();} else {wynik = String.format("%.1f", awaryjne1);}
         piec13.setText(wynik);
-        TextView piec31 = (TextView) findViewById(R.id.piec31);
-        piec31.setText(granica);
-        TextView piec19 = (TextView) findViewById(R.id.piec19);
-        piec19.setText(wynik1);
-        TextView piec24 = (TextView) findViewById(R.id.piec24);
-        piec24.setText(wynik2);
-        TextView piec29 = (TextView) findViewById(R.id.piec29);
-        piec29.setText(wynik3);
-
-        TextView godzina1 = (TextView) findViewById(R.id.godzina1);
-        godzina1.setText(p15 + ":" + p16);
-        TextView godzina1b = (TextView) findViewById(R.id.godzina1b);
-        godzina1b.setText(p17 + ":" + p18);
-        TextView godzina2 = (TextView) findViewById(R.id.godzina2);
-        godzina2.setText(p20 + ":" + p21);
-        TextView godzina2b = (TextView) findViewById(R.id.godzina2b);
-        godzina2b.setText(p22 + ":" + p23);
-        TextView godzina3 = (TextView) findViewById(R.id.godzina3);
-        godzina3.setText(p25 + ":" + p26);
-        TextView godzina3b = (TextView) findViewById(R.id.godzina3b);
-        godzina3b.setText(p27 + ":" + p28);
-
 
     }
 
@@ -923,12 +634,31 @@ public class Zuzycie extends AppCompatActivity {
         }
     }
 
+
+    public void publishMessageBB(String publishTopic, String publishMessage) {
+
+        try {
+            MqttMessage message = new MqttMessage();
+            message.setQos(1);           // QoS 1
+            message.setRetained(true);   // Retain = true
+            message.setPayload(publishMessage.getBytes());
+            mqttAndroidClient.publish(publishTopic, message);
+            addToHistory("wiadomość Wysłana");
+            if (!mqttAndroidClient.isConnected()) {
+                addToHistory(mqttAndroidClient.getBufferedMessageCount() + " wiadomość  zbuforowana");
+            }
+        } catch (MqttException e) {
+            System.err.println("Błąd wysyłania: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 //
 
     public void selectpiec(View view) {
         RadioButton wybor1 = (RadioButton) findViewById(R.id.p1);
         RadioButton wybor2 = (RadioButton) findViewById(R.id.p2);
         RadioButton wybor3 = (RadioButton) findViewById(R.id.p3);
+        RadioButton wybor4 = (RadioButton) findViewById(R.id.p4);
         boolean checked = ((RadioButton) view).isChecked();
         int id = view.getId();
         if (checked) {
@@ -936,17 +666,26 @@ public class Zuzycie extends AppCompatActivity {
                 wybor1.setChecked(true);
                 wybor2.setChecked(false);
                 wybor3.setChecked(false);
+                wybor4.setChecked(false);
                 publishMessage("Piec12", "0");
             } else if (id == R.id.p2) {
                 wybor2.setChecked(true);
                 wybor1.setChecked(false);
                 wybor3.setChecked(false);
+                wybor4.setChecked(false);
                 publishMessage("Piec12", "2");
             } else if (id == R.id.p3) {
                 wybor3.setChecked(true);
                 wybor1.setChecked(false);
                 wybor2.setChecked(false);
+                wybor4.setChecked(false);
                 publishMessage("Piec12", "1");
+            } else if (id == R.id.p4) {
+                wybor4.setChecked(true);
+                wybor1.setChecked(false);
+                wybor2.setChecked(false);
+                wybor3.setChecked(false);
+                publishMessage("Piec12", "4");
             }
         }
     }
@@ -964,6 +703,7 @@ public class Zuzycie extends AppCompatActivity {
 
 
 }
+
 
 
 

@@ -13,27 +13,76 @@
 
                 tools:context=".PahoExampleActivity">
 
+
+    <TextView
+        android:id="@+id/zadana0"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="10dp"
+        android:text=""
+        android:textColor="#fddd08"
+        android:textSize="20sp"
+        android:textStyle="normal|bold" />
+    <TextView
+    android:id="@+id/zadana1"
+    android:layout_width="wrap_content"
+    android:layout_height="22dp"
+    android:layout_marginStart="110dp"
+    android:layout_marginTop="120dp"
+    android:layout_marginEnd="10dp"
+    android:text=""
+    android:textColor="#fddd08"
+    android:textSize="20sp"
+    android:textStyle="normal|bold" />
+
+    <TextView
+    android:id="@+id/zadana2"
+    android:layout_width="wrap_content"
+    android:layout_height="22dp"
+    android:layout_marginStart="205dp"
+    android:layout_marginTop="120dp"
+    android:layout_marginEnd="10dp"
+    android:text=""
+    android:textColor="#fddd08"
+    android:textSize="20sp"
+    android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/zadana3"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="10dp"
+        android:text=""
+        android:textColor="#fddd08"
+        android:textSize="20sp"
+        android:textStyle="normal|bold" />
+
+
     <RadioButton
-        android:text="Parter"
+        android:id="@+id/p1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:id="@+id/p1"
-        app:buttonTint="@color/common_google_signin_btn_text_dark_default"
-        android:onClick="selectpiec"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        android:textSize="14sp"
         android:layout_alignBaseline="@+id/p2"
         android:layout_alignBottom="@+id/p3"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="1dp"
+        android:onClick="selectpiec"
+        android:text="Parter"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="14sp"
+        app:buttonTint="@color/common_google_signin_btn_text_dark_default" />
 
     <RadioButton
         android:text="Pokój"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="280dp"
+        android:layout_marginStart="190dp"
         android:layout_marginTop="80dp"
         android:id="@+id/p2"
         android:onClick="selectpiec"
@@ -41,12 +90,23 @@
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="14sp" />
 
+    <RadioButton
+        android:text="Awaryjny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="80dp"
+        android:id="@+id/p4"
+        android:onClick="selectpiec"
+        app:buttonTint="@color/common_google_signin_btn_text_dark_default"
+        android:textColor="#FFFF00"
+        android:textSize="14sp" />
 
     <RadioButton
         android:id="@+id/p3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="80dp"
         android:onClick="selectpiec"
         android:text="Piętro"
@@ -54,10 +114,7 @@
         android:textSize="14sp"
         app:buttonTint="@color/common_google_signin_btn_text_dark_default" />
 
-
-
-
-        <FrameLayout
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="43dp"
             android:layout_alignParentStart="true"
@@ -73,8 +130,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="90dp"
                 android:layout_marginTop="14dp"
-                android:background="#E91E63"
-                android:tint="@android:color/holo_red_dark"
+                android:background="#F44336"
+
                 android:visibility="visible"
                 app:srcCompat="@android:drawable/ic_notification_overlay" />
 
@@ -127,32 +184,22 @@
         android:textColor="#fbfdfb"
         android:textSize="14sp"
         android:textStyle="normal|bold" />
+
     <FrameLayout
+        android:id="@+id/T1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="170dp"
         android:background="#2d2c2c">
-        <CheckBox
-            android:text=""
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
 
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:id="@+id/czasowe0"
-            android:lineSpacingExtra="10sp"
-            app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
         <TextView
             android:id="@+id/textpiec2"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
             android:text="Termostat"
@@ -160,17 +207,17 @@
             android:textSize="14sp"
             android:textStyle="normal|bold" />
 
-    <TextView
-        android:id="@+id/piec13"
-        android:layout_width="60dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="240dp"
-        android:layout_marginTop="7dp"
-        android:background="#000000"
-        android:text="0"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/piec13"
+            android:layout_width="56dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="7dp"
+            android:background="#000000"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/zadanaplus"
@@ -189,431 +236,161 @@
             android:layout_height="40dp"
             android:layout_marginStart="310dp"
             android:layout_marginTop="5dp"
-            android:tint="#000000"
+
+
+
             app:srcCompat="@android:drawable/arrow_down_float" />
     </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/T1r"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="308dp"
         android:background="#2d2c2c">
-        <TextView
-            android:id="@+id/textpiec3"
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            style="@android:style/Widget.ImageButton"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginStart="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
+            app:srcCompat="@android:drawable/ic_lock_power_off"
+            app:tint="#000000" />
+
+        <RadioButton
+            android:id="@+id/piec"
+            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:button="@android:drawable/button_onoff_indicator_on"
+            android:checked="true"
+            android:duplicateParentState="true"
+            android:rotation="90"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textpec1111"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:text="Czasowy 1"
-            android:textColor="#fbfdfb"
+            android:text="PIEC                                   WODA"
+            android:textColor="#0ddd08"
             android:textSize="14sp"
             android:textStyle="normal|bold" />
 
         <TextView
-            android:id="@+id/piec19"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="240dp"
-            android:layout_marginTop="7dp"
-            android:background="#000000"
-            android:text="0"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/zadanaplus2"
-            style="@android:style/Widget.ImageButton"
-
-            android:layout_height="40dp"
-            android:layout_width="40dp"
-            android:layout_marginStart="185dp"
-            android:layout_marginTop="5dp"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/arrow_up_float" />
-        <ImageButton
-            android:id="@+id/zadanaminus2"
-            style="@android:style/Widget.ImageButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="5dp"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/arrow_down_float" />
-        <CheckBox
-            android:text=""
+            android:id="@+id/textpiec111"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:id="@+id/czasowe1"
-            android:lineSpacingExtra="10sp"
-            app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
-
-        <TextView
-            android:id="@+id/godzina1"
-            android:layout_width="55dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="50dp"
-            android:background="#9CA19D"
-            android:ems="2"
-            android:inputType="number"
-            android:maxLength="5"
-            android:text=""
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="normal|bold" />
-        <TextView
-            android:id="@+id/godzina1b"
-            android:layout_width="55dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="280dp"
-            android:layout_marginTop="50dp"
-            android:background="#9CA19D"
-            android:textAlignment="center"
-            android:elegantTextHeight="false"
-            android:ems="2"
-            android:inputType="number"
-            android:maxLength="5"
-            android:text=""
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="normal|bold" />
-
-
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="300dp"
-        android:background="#2d2c2c">
-        <TextView
-            android:id="@+id/textpiec4"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="22dp"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="35dp"
             android:layout_marginEnd="10dp"
-            android:text="Czasowy 2"
-            android:textColor="#fbfdfb"
-            android:textSize="14sp"
-            android:textStyle="normal|bold" />
-        <TextView
-            android:id="@+id/piec24"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="240dp"
-            android:layout_marginTop="7dp"
-            android:background="#000000"
-            android:text="0"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/zadanaplus3"
-            style="@android:style/Widget.ImageButton"
-
-            android:layout_height="40dp"
-            android:layout_width="40dp"
-            android:layout_marginStart="185dp"
-            android:layout_marginTop="5dp"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/arrow_up_float" />
-        <ImageButton
-            android:id="@+id/zadanaminus3"
-            style="@android:style/Widget.ImageButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="5dp"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/arrow_down_float" />
-        <CheckBox
-            android:text=""
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:id="@+id/czasowe2"
-            android:lineSpacingExtra="10sp"
-            app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
-
-        <TextView
-            android:id="@+id/godzina2"
-            android:layout_width="55dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="50dp"
-            android:background="#9CA19D"
-            android:ems="2"
-            android:inputType="number"
-            android:maxLength="5"
-            android:text=""
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="normal|bold" />
-        <TextView
-            android:id="@+id/godzina2b"
-            android:layout_width="55dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="280dp"
-            android:layout_marginTop="50dp"
-            android:background="#9CA19D"
-            android:textAlignment="center"
-            android:elegantTextHeight="false"
-            android:ems="2"
-            android:inputType="number"
-            android:maxLength="5"
-            android:text=""
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="normal|bold" />
-
-
-
-    </FrameLayout>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="400dp"
-        android:background="#2d2c2c">
-        <TextView
-            android:id="@+id/textpiec5"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="10dp"
-            android:text="Czasowy 3"
-            android:textColor="#fbfdfb"
+            android:text="        Awaryjne ogrzewanie"
+            android:textColor="#fddd08"
             android:textSize="14sp"
             android:textStyle="normal|bold" />
 
-        <TextView
-            android:id="@+id/piec29"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="240dp"
-            android:layout_marginTop="7dp"
-            android:background="#000000"
-            android:text="0"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/zadanaplus4"
-            style="@android:style/Widget.ImageButton"
-
+        <RadioButton
+            android:id="@+id/woda"
+            style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+            android:layout_width="20dp"
             android:layout_height="40dp"
-            android:layout_width="40dp"
-            android:layout_marginStart="185dp"
-            android:layout_marginTop="5dp"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/arrow_up_float" />
-        <ImageButton
-            android:id="@+id/zadanaminus4"
-            style="@android:style/Widget.ImageButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="5dp"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/arrow_down_float" />
-        <CheckBox
-            android:text=""
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:id="@+id/czasowe3"
-            android:lineSpacingExtra="10sp"
-            app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
-
-        <TextView
-            android:id="@+id/godzina3"
-            android:layout_width="55dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="50dp"
-            android:background="#9CA19D"
-            android:ems="2"
-            android:inputType="number"
-            android:maxLength="5"
-            android:text=""
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="normal|bold" />
-        <TextView
-            android:id="@+id/godzina3b"
-            android:layout_width="55dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="280dp"
-            android:layout_marginTop="50dp"
-            android:background="#9CA19D"
-            android:textAlignment="center"
-            android:elegantTextHeight="false"
-            android:ems="2"
-            android:inputType="number"
-            android:maxLength="5"
-            android:text=""
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="normal|bold" />
-
-
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="500dp"
-        android:background="#2d2c2c">
-        <CheckBox
-            android:text=""
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:id="@+id/czasowe5"
-            android:lineSpacingExtra="10sp"
-            app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
-        <TextView
-            android:id="@+id/textpiec7"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="285dp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="10dp"
-            android:text="Opużnienie czas."
-            android:textColor="#fbfdfb"
-            android:textSize="14sp"
-            android:textStyle="normal|bold" />
+            android:button="@android:drawable/button_onoff_indicator_on"
+            android:checked="true"
+            android:duplicateParentState="true"
+
+            android:rotation="90"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@android:drawable/ic_lock_power_off"
+            app:tint="#000000" />
 
         <TextView
-            android:id="@+id/piec30"
-            android:layout_width="80dp"
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="230dp"
-            android:layout_marginTop="7dp"
-            android:background="#000000"
-            android:text="120min"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="60dp"
             android:textAlignment="center"
             android:textColor="#fddd08"
-            android:textSize="20sp" />
-
-        <ImageButton
-            android:id="@+id/zadanaplus5"
-            style="@android:style/Widget.ImageButton"
-
-            android:layout_height="40dp"
-            android:layout_width="40dp"
-            android:layout_marginStart="185dp"
-            android:layout_marginTop="5dp"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/arrow_up_float" />
-        <ImageButton
-            android:id="@+id/zadanaminus5"
-            style="@android:style/Widget.ImageButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="5dp"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/arrow_down_float" />
+            android:textSize="14sp"
+            android:textStyle="normal|bold" />
+        <TextView
+            android:id="@+id/textView27b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="312dp"
+            android:layout_marginTop="60dp"
+            android:textAlignment="center"
+            android:textColor="#fddd08"
+            android:textSize="14sp"
+            android:textStyle="normal|bold" />
     </FrameLayout>
+
     <FrameLayout
+        android:id="@+id/T111"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="560dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="230dp"
         android:background="#2d2c2c">
-
         <TextView
-            android:id="@+id/textgramica"
+            android:id="@+id/textpiec22"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="10dp"
-            android:text="Granica"
+            android:text="Harmonogram"
             android:textColor="#fbfdfb"
             android:textSize="14sp"
             android:textStyle="normal|bold" />
 
+        <ImageButton
+            android:id="@+id/imageButton9"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@android:drawable/ic_lock_power_off"
+            app:tint="#000000" />
         <TextView
-            android:id="@+id/piec31"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
+            android:id="@+id/textView191"
+            android:layout_width="43dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="240dp"
-            android:layout_marginTop="7dp"
-            android:background="#000000"
-            android:text="0"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:layout_marginTop="25dp"
+            android:text=" "
+            android:textColor="#fddd08" />
 
-        <ImageButton
-            android:id="@+id/zadanaplus6"
-            style="@android:style/Widget.ImageButton"
 
-            android:layout_height="40dp"
-            android:layout_width="40dp"
-            android:layout_marginStart="185dp"
-            android:layout_marginTop="5dp"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/arrow_up_float" />
-        <ImageButton
-            android:id="@+id/zadanaminus6"
-            style="@android:style/Widget.ImageButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="5dp"
-            android:tint="#000000"
-            app:srcCompat="@android:drawable/arrow_down_float" />
     </FrameLayout>
-
-
-
 
 </RelativeLayout>
