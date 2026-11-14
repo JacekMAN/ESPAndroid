@@ -44,7 +44,18 @@ public class Sterowanie extends AppCompatActivity {
     Commons commons = new Commons();
 
     String clientId = "";
-    final String subscriptionTopic = "#";
+    final String[] subscriptionTopics = {
+            "S5/dane1",
+            "S5/dane2",
+            "S9/w11",
+            "A0/dane0",
+            "S3/dane0",
+            "S3/dane2",
+            "S9/dane0",
+            "S6/dane0",
+            "S5/w3",
+
+    };
     int wiata = 10;
     int wiazd = 0;
     int lampa = 10;
@@ -121,11 +132,11 @@ public class Sterowanie extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (rolety ==1){
-                    publishMessage("S8/dane1", "6");
+                    publishMessage("zigbee2mqtt/Rolety Pietro/set", "{\"state\":\"STOP\"}");
                     addToHistory("stop  !!!!");rolety=2;}
 
                 if (rolety ==0){
-                publishMessage("S8/dane1", "4");
+                publishMessage("zigbee2mqtt/Rolety Pietro/set", "{\"state\":\"OPEN\"}");
                 addToHistory("Rolety do góry !!!!");rolety=1;}
                 if (rolety ==2) {rolety=0;}
 
@@ -148,12 +159,12 @@ public class Sterowanie extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (rolety ==1) {
-                    publishMessage("S8/dane1", "6");
+                    publishMessage("zigbee2mqtt/Rolety Pietro/set", "{\"state\":\"STOP\"}");
                     addToHistory("STOP !!!!");rolety=2;}
 
 
                 if (rolety ==0) {
-                publishMessage("S8/dane1", "5");
+                publishMessage("zigbee2mqtt/Rolety Pietro/set", "{\"state\":\"CLOSE\"}");
                 addToHistory("Rolety na dół !!!!");rolety=1;}
                 final ImageButton button414 = (ImageButton) findViewById(R.id.imageButton414);
 
@@ -361,7 +372,9 @@ public class Sterowanie extends AppCompatActivity {
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                dosalemWiadomosc(topic, new String(message.getPayload()));
+                final String tresc = new String(message.getPayload());
+
+                runOnUiThread(() -> dosalemWiadomosc(topic, tresc));
             }
 
             @Override
@@ -627,41 +640,34 @@ public class Sterowanie extends AppCompatActivity {
 
     public void subscribeToTopic() {
         try {
-            mqttAndroidClient.subscribe(subscriptionTopic, 1, null, new IMqttActionListener() {
+            int[] qos = new int[subscriptionTopics.length];
+
+            for (int i = 0; i < qos.length; i++) {
+                qos[i] = 1;
+            }
+
+            mqttAndroidClient.subscribe(
+                    subscriptionTopics,
+                    qos,
+                    null,
+                    new IMqttActionListener() {
                         @Override
                         public void onSuccess(IMqttToken asyncActionToken) {
-                            // addToHistory("Połączono z serwerem");
-                            ImageButton pol = (ImageButton) findViewById(R.id.imageButton);
+                            ImageButton pol = findViewById(R.id.imageButton);
                             pol.setColorFilter(Color.GREEN);
-
                         }
 
                         @Override
-                        public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                            addToHistory("Błąd pobierania");
+                        public void onFailure(
+                                IMqttToken asyncActionToken,
+                                Throwable exception) {
+                            addToHistory("Błąd subskrypcji MQTT");
+                            exception.printStackTrace();
                         }
                     }
-//            ,new IMqttMessageListener() {
-//                        @Override
-//                        public void messageArrived(String topic, MqttMessage message) throws Exception {
-//                            // message Arrived!
-//                            System.out.print("------------------------------\nMessage: " + topic + " : " + new String(message.getPayload()));
-//                            addToHistory("------------------------------\nMessage: " + topic + " : " + new String(message.getPayload()));
-//                        }
-//
-//            }
             );
-//            // THIS DOES NOT WORK!
-//            mqttAndroidClient.subscribe(subscriptionTopic, 0, new IMqttMessageListener() {
-//                @Override
-//                public void messageArrived(String topic, MqttMessage message) throws Exception {
-//                    // message Arrived!
-//                    System.out.println("Message: " + topic + " : " + new String(message.getPayload()));
-//                }
-//            });
 
         } catch (MqttException ex) {
-            System.err.println("Exception whilst subscribing");
             ex.printStackTrace();
         }
     }

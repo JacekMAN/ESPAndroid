@@ -35,7 +35,42 @@ public class Alarmy extends AppCompatActivity {
     String clientId = "";
     String serverUri = "";
 
-    final String subscriptionTopic = "#";
+    private void subscribeToTopic() {
+        if (mqttAndroidClient == null || !mqttAndroidClient.isConnected()) {
+            return;
+        }
+
+        String[] subscriptionTopics = {
+                "A0/dane0",
+                "A0/dane1",
+                "A0/dane2",
+                "A0/dane3",
+                "A0/dane4",
+                "A0/dane5",
+                "A0/dane6",
+                "A0/dane7",
+                "A0/dane8",
+                "A0/dane9",
+                       };
+
+        for (String topic : subscriptionTopics) {
+            try {
+                mqttAndroidClient.subscribe(topic, 1, null, new IMqttActionListener() {
+                    @Override
+                    public void onSuccess(IMqttToken asyncActionToken) {
+                        android.util.Log.d("MQTT", "Subskrypcja OK: " + topic);
+                    }
+
+                    @Override
+                    public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                        android.util.Log.e("MQTT", "Błąd subskrypcji: " + topic, exception);
+                    }
+                });
+            } catch (org.eclipse.paho.client.mqttv3.MqttException e) {
+                android.util.Log.e("MQTT", "Wyjątek podczas subskrypcji: " + topic, e);
+            }
+        }
+    }
 
 
     MqttAndroidClient mqttAndroidClient;
@@ -119,7 +154,13 @@ public class Alarmy extends AppCompatActivity {
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                dosalemWiadomosc(topic, new String(message.getPayload()));
+                final String odebranyTemat = topic;
+                final String odebranaWiadomosc =
+                        new String(message.getPayload());
+
+                runOnUiThread(() ->
+                        dosalemWiadomosc(odebranyTemat, odebranaWiadomosc)
+                );
             }
 
             @Override
@@ -165,44 +206,15 @@ public class Alarmy extends AppCompatActivity {
     }
 
 
-    public void subscribeToTopic() {
-        try {
-            mqttAndroidClient.subscribe(subscriptionTopic, 1, null, new IMqttActionListener() {
-                        @Override
-                        public void onSuccess(IMqttToken asyncActionToken) {
-                            // addToHistory("Połączono z serwerem");
 
+    public void messageArrived(String topic, MqttMessage message) throws Exception {
+        final String odebranyTemat = topic;
+        final String odebranaWiadomosc =
+                new String(message.getPayload());
 
-                        }
-
-                        @Override
-                        public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                            addToHistory("Błąd pobierania");
-                        }
-                    }
-//            ,new IMqttMessageListener() {
-//                        @Override
-//                        public void messageArrived(String topic, MqttMessage message) throws Exception {
-//                            // message Arrived!
-//                            System.out.print("------------------------------\nMessage: " + topic + " : " + new String(message.getPayload()));
-//                            addToHistory("------------------------------\nMessage: " + topic + " : " + new String(message.getPayload()));
-//                        }
-//
-//            }
-            );
-//            // THIS DOES NOT WORK!
-//            mqttAndroidClient.subscribe(subscriptionTopic, 0, new IMqttMessageListener() {
-//                @Override
-//                public void messageArrived(String topic, MqttMessage message) throws Exception {
-//                    // message Arrived!
-//                    System.out.println("Message: " + topic + " : " + new String(message.getPayload()));
-//                }
-//            });
-
-        } catch (MqttException ex) {
-            System.err.println("Exception whilst subscribing");
-            ex.printStackTrace();
-        }
+        runOnUiThread(() ->
+                dosalemWiadomosc(odebranyTemat, odebranaWiadomosc)
+        );
     }
 
 
@@ -366,6 +378,8 @@ public class Alarmy extends AppCompatActivity {
                 }
                 alarm1.setText(alarm01);
                 break;
+
+
 
             case "A0/dane2":
                 TextView alarm2 = (TextView) findViewById(R.id.alarmowy02b);

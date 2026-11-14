@@ -83,7 +83,23 @@ public class Zuzycie extends AppCompatActivity {
 
     String wynik = " ";
 
-    final String subscriptionTopic = "#";
+    final String[] subscriptionTopics = {
+            "Piec14",
+            "S7/awaryjne1",
+            "S7/awaryjne2",
+            "S7/dane11",
+            "S7/dane2",
+            "Piec50",
+            "S1/dane7",
+            "S1/dane8",
+            "S7/dodatkowe",
+            "S2/dane0",
+            "S7/awaryjne",
+            "S2/dane9",
+            "Piec12",
+
+
+    };
 
 
     SharedPreferences Baza;
@@ -260,11 +276,14 @@ public class Zuzycie extends AppCompatActivity {
 
                                           @Override
                                           public void messageArrived(String topic, MqttMessage message) throws Exception {
+                                              final String odebranyTemat = topic;
+                                              final String odebranaWiadomosc =
+                                                      new String(message.getPayload());
 
-
-                                              dosalemWiadomosc(topic, new String(message.getPayload()));
+                                              runOnUiThread(() ->
+                                                      dosalemWiadomosc(odebranyTemat, odebranaWiadomosc)
+                                              );
                                           }
-
 
                                           @Override
                                           public void deliveryComplete(IMqttDeliveryToken token) {
@@ -322,41 +341,40 @@ public class Zuzycie extends AppCompatActivity {
 
     public void subscribeToTopic() {
         try {
-            mqttAndroidClient.subscribe(subscriptionTopic, 1, null, new IMqttActionListener() {
+            int[] qos = new int[subscriptionTopics.length];
+
+            for (int i = 0; i < qos.length; i++) {
+                qos[i] = 1;
+            }
+
+            mqttAndroidClient.subscribe(
+                    subscriptionTopics,
+                    qos,
+                    null,
+                    new IMqttActionListener() {
                         @Override
                         public void onSuccess(IMqttToken asyncActionToken) {
-                            // addToHistory("Połączono z serwerem");
-                            ImageButton pol = (ImageButton) findViewById(R.id.piecsiec);
-                            pol.setColorFilter(Color.GREEN);
+                            ImageButton pol = findViewById(R.id.imageButton);
 
+                            if (pol != null) {
+                                pol.setColorFilter(Color.GREEN);
+                            } else {
+                                android.util.Log.e("MQTT",
+                                        "Nie znaleziono przycisku imageButton w layout zuzycie");
+                            }
                         }
 
                         @Override
-                        public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                            addToHistory("Błąd pobierania");
+                        public void onFailure(
+                                IMqttToken asyncActionToken,
+                                Throwable exception) {
+                            addToHistory("Błąd subskrypcji MQTT");
+                            exception.printStackTrace();
                         }
                     }
-//            ,new IMqttMessageListener() {
-//                        @Override
-//                        public void messageArrived(String topic, MqttMessage message) throws Exception {
-//                            // message Arrived!
-//                            System.out.print("------------------------------\nMessage: " + topic + " : " + new String(message.getPayload()));
-//                            addToHistory("------------------------------\nMessage: " + topic + " : " + new String(message.getPayload()));
-//                        }
-//
-//            }
             );
-//            // THIS DOES NOT WORK!
-//            mqttAndroidClient.subscribe(subscriptionTopic, 0, new IMqttMessageListener() {
-//                @Override
-//                public void messageArrived(String topic, MqttMessage message) throws Exception {
-//                    // message Arrived!
-//                    System.out.println("Message: " + topic + " : " + new String(message.getPayload()));
-//                }
-//            });
 
         } catch (MqttException ex) {
-            System.err.println("Exception whilst subscribing");
             ex.printStackTrace();
         }
     }
@@ -685,7 +703,7 @@ public class Zuzycie extends AppCompatActivity {
                 wybor1.setChecked(false);
                 wybor2.setChecked(false);
                 wybor3.setChecked(false);
-                publishMessage("Piec12", "4");
+                publishMessage("Piec12", "3");
             }
         }
     }

@@ -19,7 +19,6 @@ import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
@@ -57,7 +56,6 @@ import org.eclipse.paho.client.mqttv3.MqttCallbackExtended;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -82,7 +80,54 @@ public class PahoExampleActivity extends AppCompatActivity {
     String pm10 = "";
     String pomiar = "";
     String clientId = "";
-    final String subscriptionTopic = "#";
+    String Podlewanie =" ";
+    final String[] subscriptionTopics = {
+            "S1/dane0",
+            "S1/dane5",
+            "S3/dane2",
+            "S3/dane3",
+            "S1/dane7",
+            "S11/dane1",
+            "S11/dane2",
+            "S1/dane8",
+            "S2/dane9",
+            "S5/woda",
+            "S10/dane1",
+            "S10/dane2",
+            "S10/dane3",
+            "S10/dane4",
+            "S10/dane5",
+            "S10/dane6",
+            "S10/dane8",
+            "S7/dane1",
+            "S7/w22",
+            "A0/dane9",
+            "S8/dane5",
+            "S8/dane4",
+            "S3/w1",
+            "S6/w1",
+            "S9/w1",
+            "S9/w11",
+            "S1/dane1",
+            "S1/dane2",
+            "S1/dane3",
+            "S1/dane4",
+            "S2/dane10",
+            "S5/dane1",
+            "S5/dane2",
+            "S1/dane9",
+            "S7/dane11",
+            "S7/dane7",
+            "S7/dane22",
+            "S7/dane4",
+            "S7/dane5",
+            "Piec50",
+            "S7/dane3",
+            "S1/dane6",
+            "S8/dane1",
+            "S7/dodane1",
+
+    };
     double temperatura;
     int wod = 0;
     double piwnica = 0;
@@ -145,6 +190,14 @@ public class PahoExampleActivity extends AppCompatActivity {
         if (Baza.getString("Orient", "1").equals("2")) {
             // To Tablet
         }
+
+        Podlewanie = Baza.getString("podlewanie", "nie");
+
+        if (Podlewanie.equals("nie")) {findViewById(R.id.progresswoda).setVisibility(View.GONE);
+            TextView temp912 = (TextView) findViewById(R.id.textView200);
+            temp912.setText(" ");}
+
+
 
 
         if (Baza.getString("lacze", "1").equals("1")) {
@@ -475,24 +528,9 @@ public class PahoExampleActivity extends AppCompatActivity {
                 }
                 break;
 
-            case "S11/dane1":
 
-                TextView temp17 = (TextView) findViewById(R.id.pro2);
 
-                temp17.setText(message);
 
-                break;
-
-            case "S11/dane3":
-
-                TextView temp18 = (TextView) findViewById(R.id.pro4);
-                pomiar = message;
-
-                if (piwnica != 1) {
-                    temp18.setText(pomiar);
-                }
-
-                break;
 
 
             case "S1/dane8":
@@ -528,26 +566,30 @@ public class PahoExampleActivity extends AppCompatActivity {
                 break;
 
             case "S5/woda":
-                TextView tempwoda = (TextView) findViewById(R.id.textViewwoda);
-                tempwoda.setText(message + "%");
+
+                if (Podlewanie.equals("tak")) {
+                    TextView tempwoda = (TextView) findViewById(R.id.textViewwoda);
+                    tempwoda.setText(message + "%");
 
 
-                double zmiennawoda = new Double(message);
-                tempwoda.setTextColor(Color.RED);
-                if (zmiennawoda >= 11) {
-                    tempwoda.setTextColor(Color.YELLOW);
-                }
-                if (zmiennawoda >= 50) {
-                    tempwoda.setTextColor(Color.GREEN);
+                    double zmiennawoda = new Double(message);
+                    tempwoda.setTextColor(Color.RED);
+                    if (zmiennawoda >= 11) {
+                        tempwoda.setTextColor(Color.YELLOW);
+                    }
+                    if (zmiennawoda >= 50) {
+                        tempwoda.setTextColor(Color.GREEN);
 
-                }
-                int poziom = (int) zmiennawoda;
-                woda = (ProgressBar) findViewById(R.id.progresswoda);
-                woda.setProgress(poziom);
-                if (wynik > 50) {
-                    woda.setProgressTintList(ColorStateList.valueOf(Color.GREEN));
-                } else {
-                    woda.setProgressTintList(ColorStateList.valueOf(Color.YELLOW));
+                    }
+                    int poziom = (int) zmiennawoda;
+                    woda = (ProgressBar) findViewById(R.id.progresswoda);
+                    woda.setProgress(poziom);
+                    if (wynik > 50) {
+                        woda.setProgressTintList(ColorStateList.valueOf(Color.GREEN));
+                    } else {
+                        woda.setProgressTintList(ColorStateList.valueOf(Color.YELLOW));
+                    }
+
                 }
 
 
@@ -626,6 +668,25 @@ public class PahoExampleActivity extends AppCompatActivity {
                     temp11.setText(message + "kW");
 
 
+                }
+                break;
+            case "S7/dodane1":
+                if (!"0".equals(message)) {
+                    try {
+                        double mAC = Double.parseDouble(message);
+                        // sprawdzamy czy mAC > 0.10
+                        if (mAC > 0.10) {
+                            double ladowanie = mAC * 2.16;
+
+                            TextView tempauto = findViewById(R.id.Auto);
+                            tempauto.setText(
+                                    "Auto - doładowano: " + message + " kWh   + " +
+                                            String.format("%.0f", ladowanie) + "%"
+                            );
+                        }
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
                 }
                 break;
 
@@ -1014,27 +1075,6 @@ public class PahoExampleActivity extends AppCompatActivity {
                 break;
 
 
-            case "A0/dane0":
-
-                FrameLayout prom1 = (FrameLayout) findViewById(R.id.prom);
-                TextView pro2 = (TextView) findViewById(R.id.pro2);
-                TextView pro4 = (TextView) findViewById(R.id.pro4);
-                otw11 = new Double(message);
-
-                if (otw11 == 0) {
-                    if (promieniowanie.equals("tak")) {
-                        pro2.setTextColor(Color.BLACK);
-                        getPromieniowanie((TextView) findViewById(R.id.pro4));
-                    }
-                } else {
-                    prom1.setBackgroundColor(Color.rgb(199, 45, 45));
-                    pro2.setTextColor(Color.WHITE);
-                    pro2.setText("ALARM");
-                    pro4.setText("!! WŁĄCZONY !!");
-                }
-
-
-                break;
 
 
             case "S5/dane2":
@@ -1159,6 +1199,22 @@ public class PahoExampleActivity extends AppCompatActivity {
                 }
                 break;
 
+            case "S11/dane1":
+
+                TextView temp17 = (TextView) findViewById(R.id.pro2);
+
+                temp17.setText(message);
+
+                break;
+
+            case "S11/dane2":
+
+                TextView moce = (TextView) findViewById(R.id.pro4);
+
+                moce.setText(message);
+                pomiar = message;
+                break;
+
         }
     }
 
@@ -1207,45 +1263,41 @@ public class PahoExampleActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     public void subscribeToTopic() {
         try {
-            mqttAndroidClient.subscribe(subscriptionTopic, 1, null, new IMqttActionListener() {
+            int[] qos = new int[subscriptionTopics.length];
+
+            for (int i = 0; i < qos.length; i++) {
+                qos[i] = 1;
+            }
+
+            mqttAndroidClient.subscribe(
+                    subscriptionTopics,
+                    qos,
+                    null,
+                    new IMqttActionListener() {
                         @Override
                         public void onSuccess(IMqttToken asyncActionToken) {
-                            // addToHistory("Połączono z serwerem");
-                            ImageButton pol = (ImageButton) findViewById(R.id.imageButton);
+                            ImageButton pol = findViewById(R.id.imageButton);
                             pol.setColorFilter(Color.GREEN);
                         }
 
                         @Override
-                        public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                            addToHistory("Failed to subscribe");
+                        public void onFailure(
+                                IMqttToken asyncActionToken,
+                                Throwable exception) {
+                            addToHistory("Błąd subskrypcji MQTT");
+                            exception.printStackTrace();
                         }
                     }
-//            ,new IMqttMessageListener() {
-//                        @Override
-//                        public void messageArrived(String topic, MqttMessage message) throws Exception {
-//                            // message Arrived!
-//                            System.out.print("------------------------------\nMessage: " + topic + " : " + new String(message.getPayload()));
-//                            addToHistory("------------------------------\nMessage: " + topic + " : " + new String(message.getPayload()));
-//                        }
-//
-//            }
             );
-//            // THIS DOES NOT WORK!
-//            mqttAndroidClient.subscribe(subscriptionTopic, 0, new IMqttMessageListener() {
-//                @Override
-//                public void messageArrived(String topic, MqttMessage message) throws Exception {
-//                    // message Arrived!
-//                    System.out.println("Message: " + topic + " : " + new String(message.getPayload()));
-//                }
-//            });
 
         } catch (MqttException ex) {
-            System.err.println("Exception whilst subscribing");
             ex.printStackTrace();
         }
     }
+
 
     public void publishMessage(String publishTopic, String publishMessage) {
 
@@ -1389,96 +1441,8 @@ public class PahoExampleActivity extends AppCompatActivity {
     }
 
 
-    private void getPromieniowanie(final TextView textView) {
 
-        String url = "https://radioactiveathome.org/boinc/gettrickledata.php?start=0&hostid=15877";
-        RequestQueue queue = Volley.newRequestQueue(this);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                String[] linie = response.split("\\n");
-                double max = 0d;
-                String data = " ";
-                for (String s : linie) {
-                    String[] wyniki = s.split(",");
-                    if (wyniki.length < 7)
-                        continue;
-                    Double wynik = new Double(wyniki[2]);
-                    Double czas = new Double(wyniki[6]);
-                    wynik = (wynik / czas) / 171.232876;
-                    if (wynik > max) {
-                        max = wynik;
-                        data = wyniki[3];
-                    }
-
-                }
-
-                String[] wyniki = linie[linie.length - 1].split(",");
-                Double wynik = new Double(wyniki[2]);
-                Double czas = new Double(wyniki[6]);
-                wynik = (wynik / czas) / 171.232876;
-                DecimalFormat twoDForm = new DecimalFormat("##.##");
-                FrameLayout prom = (FrameLayout) findViewById(R.id.prom);
-                if (wynik < 0.30) ;
-                {
-                    prom.setBackgroundColor(Color.rgb(31, 135, 45));
-                }
-                TextView pr = (TextView) findViewById(R.id.pro2);
-                pr.setText("Radioaktywność");
-                textView.setText(twoDForm.format(wynik) + " uSv/h");
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-            }
-        });
-        queue.add(stringRequest);
-    }
-
-    private void getPM(String station, final String id, final TextView nazwaView, final TextView wartoscView,
-                       final TextView przekroczenieView, final TextView sredniaView, final FrameLayout frameLayout) {
-        station = station.isEmpty() ? "23" : station;
-        String url = "https://api.smoksmog.jkostrz.name/api/stations/" + station;
-        RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                JSONObject jsonObject = null;
-                try {
-                    jsonObject = new JSONObject(response);
-                    JSONArray listaOdczytow = jsonObject.getJSONArray("particulates");
-                    for (int i = 0; i < listaOdczytow.length(); i++) {
-                        JSONObject odczyt = listaOdczytow.getJSONObject(i);
-                        if (odczyt.getString("id").equals(id)) {
-                            Double wartosc = new Double(odczyt.getString("value"));
-                            Double norma = new Double(odczyt.getString("norm"));
-                            Double srednia = new Double(odczyt.getString("avg"));
-                            String nazwa = odczyt.getString("short_name");
-                            nazwaView.setText(nazwa);
-                            Double procent = (wartosc * 100d) / norma;
-                            srednia = (srednia * 100d) / norma;
-                            DecimalFormat twoDForm = new DecimalFormat("####");
-                            wartoscView.setText(twoDForm.format(procent) + "%");
-                            sredniaView.setText("Sred :" + twoDForm.format(srednia) + "%");
-                            ocenZanieczysczenie(procent, przekroczenieView, frameLayout);
-                            nazwaView.setText(nazwa);
-                            System.out.println("LOG: \n Odczyt poprawny o godzinie : " + odczyt.getString("date"));
-                        }
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-            }
-        });
-        queue.add(stringRequest);
-    }
 
 
     public void ocenZanieczysczenie(Double d, TextView textView, FrameLayout frameLayout) {
@@ -1509,10 +1473,7 @@ public class PahoExampleActivity extends AppCompatActivity {
 
     }
 
-    public void Rybnik(View view) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.meteo.pl/um/metco/mgram_pict.php?ntype=&row=465&col=207&lang=pl"));
-        startActivity(intent);
-    }
+
 
     private void wspolne() {
 

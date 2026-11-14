@@ -1,146 +1,572 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
+    android:padding="10dp"
     android:background="#000000">
 
-
+    <!-- Górny pasek -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_alignParentTop="true"
-        android:background="#2d2c2c"
-        android:layout_marginTop="10dp"
-        android:layout_alignLeft="@+id/frameLayout"
-        android:layout_alignStart="@+id/frameLayout">
-
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:background="#2d2c2c">
 
 
         <TextView
-            android:text="Ustawienie parametrów"
-            android:layout_height="19dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="9dp"
             android:id="@+id/textView1"
-            android:textColor="#fbfdfb"
-            android:textSize="12sp"
-            android:layout_marginEnd="10dp"
-            android:textStyle="normal|bold"
-            android:textAlignment="viewStart"
-            android:layout_width="200dp" />
-
-
-
-        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="260dp"
-            android:layout_marginTop="2dp"
-            app:srcCompat="@android:drawable/ic_menu_revert"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
+            android:text="Media"
+            android:textColor="#fbfdfb"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2999"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="12dp"
+            android:text="lokalne"
+            android:textColor="#fbfdfb"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageButton
             android:id="@+id/powr"
-            android:background="@android:drawable/ic_menu_revert" />
+            android:layout_marginStart="320dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="Powrót"
+            app:srcCompat="@android:drawable/ic_menu_revert"
+            app:tint="#ffffff" />
+    </FrameLayout>
+
+    <!-- Tytuł -->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Energia elektryczna"
+        android:textColor="#fddd08"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Nagłówki faz -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Faza A"
+            android:textColor="#fddd08"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Faza B"
+            android:textColor="#fddd08"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Faza C"
+            android:textColor="#fddd08"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Napięcia faz -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/Media1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="---"
+            android:textColor="#fbfdfb"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Media2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="---"
+            android:textColor="#fbfdfb"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Media3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="---"
+            android:textColor="#fbfdfb"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Moce faz -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/MocA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="---"
+            android:textColor="#00ff00"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/MocB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="---"
+            android:textColor="#00ff00"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/MocC"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="---"
+            android:textColor="#00ff00"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Dolny pasek -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="4dp"
+        android:background="#2d2c2c">
+    <TextView
+        android:id="@+id/dane"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:text="Dziś pobór        Miesiąc            Moc                 Licznik"
+        android:textColor="#fbfdfb"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dzis"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/miesiac"
+            android:layout_width="70dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/moc"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/licznik"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp" />
+
+
 
     </FrameLayout>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="60dp"
-        android:text="Ustawienia lamp"
-        android:textColor="#fddd08" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="4dp"
+        android:background="#2d2c2c">
 
-    <CheckBox
-        android:text="maksymaln temperatura"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        <TextView
+            android:id="@+id/dane0"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:text="                            Pobór            Miesiąc                 Moc"
+            android:textColor="#fddd01"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="80dp"
-        android:textColor="#FFFFFF"
-        android:id="@+id/piec1"
-        android:lineSpacingExtra="10sp"
-        app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
+        <TextView
+            android:id="@+id/dan1"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="Ogród"
+            android:textColor="#fddd01"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/dan2"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="55dp"
+            android:text="Basen"
+            android:textColor="#fddd01"
+            android:textSize="14sp" />
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="40dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="86dp"
-        android:background="#2d2c2c"
-        android:ems="2"
-        android:inputType="number"
-        android:text=""
-        android:textColor="#FFFFFF" />
+        <TextView
+            android:id="@+id/pob1"
+            android:layout_width="70dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp" />
 
-    <TextView
-        android:text="`C"
-        android:layout_height="19dp"
-        android:layout_marginTop="85dp"
-        android:id="@+id/textView2"
-        android:textColor="#fbfdfb"
-        android:textSize="18sp"
-        android:textStyle="normal|bold"
-        android:textAlignment="center"
-        android:layout_toRightOf="@+id/editText1"
-        android:layout_width="30dp" />
+        <TextView
+            android:id="@+id/pob2"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp" />
 
-    <CheckBox
-        android:text="minimalna temperatura"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        <TextView
+            android:id="@+id/pob3"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/pob4"
+            android:layout_width="70dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="55dp"
+            android:text="----"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp" />
 
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="120dp"
-        android:textColor="#FFFFFF"
-        android:id="@+id/piec2"
-        android:lineSpacingExtra="10sp"
-        app:buttonTint="@color/common_google_signin_btn_text_dark_default"/>
+        <TextView
+            android:id="@+id/pob5"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="55dp"
+            android:text="----"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp" />
 
-    <EditText
-        android:layout_height="20dp"
-        android:inputType="number"
-        android:text=""
-        android:ems="2"
-        android:textColor="#FFFFFF"
-        android:background="#2d2c2c"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="126dp"
-        android:id="@+id/editText2"
-        android:layout_width="40dp" />
+        <TextView
+            android:id="@+id/pob6"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="55dp"
+            android:text="----"
+            android:textColor="#fbfdfb"
+            android:textSize="14sp" />
 
-    <TextView
-        android:text="`C"
-        android:layout_height="19dp"
-        android:layout_marginTop="125dp"
-        android:id="@+id/textView3"
-        android:textColor="#fbfdfb"
-        android:textSize="18sp"
-        android:textStyle="normal|bold"
-        android:textAlignment="center"
-        android:layout_toRightOf="@+id/editText1"
-        android:layout_width="30dp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginTop="4dp"
+        android:background="#ffff">
+        <TextView
+            android:id="@+id/a1"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:text="FOTOWOLTAIKA                                              WIATA"
+            android:textColor="#111"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/a2"
+            android:layout_width="40dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="Dziś"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/a3"
+            android:layout_width="70dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/a4"
+            android:layout_width="40dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="30dp"
+            android:text="Dziś"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/a5"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/b2"
+            android:layout_width="50dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="55dp"
+            android:text="Miesiąc"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/b3"
+            android:layout_width="70dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="55dp"
+            android:text="----"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/b4"
+            android:layout_width="50dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="55dp"
+            android:text="Miesiąc"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/b5"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="55dp"
+            android:text="----"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/c2"
+            android:layout_width="50dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="80dp"
+            android:text="Moc"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/c3"
+            android:layout_width="70dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="80dp"
+            android:text="----"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/c4"
+            android:layout_width="50dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="80dp"
+            android:text="Moc"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/c5"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="80dp"
+            android:text="----"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/d2"
+            android:layout_width="70dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="105dp"
+            android:text="Magazyn"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/d3"
+            android:layout_width="30dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="105dp"
+            android:text="0%"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="100dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="112dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:minHeight="30dp"
+            android:progress="0" />
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="4dp"
+        android:background="#00ff00">
+        <TextView
+            android:id="@+id/au"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:text="Auto dziś        Miesiąc            Rok                 Moc"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/au1"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/au2"
+            android:layout_width="70dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/au3"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#111111"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/au4"
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="30dp"
+            android:text="----"
+            android:textColor="#111111"
+            android:textSize="14sp" />
 
 
 
+    </FrameLayout>
 
-
-
-
-
-
-
-
-
-</RelativeLayout>
+</LinearLayout>

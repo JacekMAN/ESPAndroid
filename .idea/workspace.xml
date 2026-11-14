@@ -92,15 +92,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4f1c4ee-b88a-40d7-bdbd-7f4048836bed" name="Default" comment="Dodanie DNS">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c4f1c4ee-b88a-40d7-bdbd-7f4048836bed" name="Default" comment="Aktualizacje">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Alarm.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Alarm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Alarmy.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Alarmy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/PahoExampleActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/PahoExampleActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Sterowanie.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Sterowanie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Zuzycie.java" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Zuzycie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/activity_scrolling.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/activity_scrolling.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/alarm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/alarm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/sterowanie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/sterowanie.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/zuzycie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/paho.mqtt.android.example/src/main/res/layout/zuzycie.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +117,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=68e0fa90)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=ROZXPNFIYLZH45B6)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -546,7 +546,7 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="System Trace" />
         <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
@@ -629,7 +629,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736678969058</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Dodanie DNS">
+      <option name="closed" value="true" />
+      <created>1763052825449</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763052825449</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Dodanie DNS">
+      <option name="closed" value="true" />
+      <created>1763052942056</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763052942056</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -700,6 +716,29 @@
           <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Ustawienia.java</url>
           <line>72</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/PahoExampleActivity.java</url>
+          <line>700</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/org.eclipse.paho.android.service/src/main/java/org/eclipse/paho/android/service/MqttAndroidClient.java</url>
+          <line>1603</line>
+          <properties class="org.eclipse.paho.android.service.MqttAndroidClient" method="traceAction">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/paho.mqtt.android.example/src/main/java/paho/mqtt/android/example/Sterowanie.java</url>
+          <line>622</line>
+          <properties class="paho.mqtt.android.example.Sterowanie" method="onCreateOptionsMenu">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

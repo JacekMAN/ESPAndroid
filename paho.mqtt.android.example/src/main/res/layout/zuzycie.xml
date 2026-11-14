@@ -123,17 +123,17 @@
             android:layout_marginTop="0dp"
             android:background="#2d2c2c">
 
-            <ImageButton
-                android:id="@+id/piecsiec"
-                style="@style/Widget.AppCompat.ImageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="90dp"
-                android:layout_marginTop="14dp"
-                android:background="#F44336"
+        <ImageButton
+            android:id="@+id/piecsiec"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="14dp"
+            android:background="#F44336"
 
-                android:visibility="visible"
-                app:srcCompat="@android:drawable/ic_notification_overlay" />
+            android:visibility="visible"
+            app:srcCompat="@android:drawable/ic_notification_overlay" />
 
             <TextView
                 android:id="@+id/textView1999"
